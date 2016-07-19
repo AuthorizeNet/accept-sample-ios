@@ -110,11 +110,9 @@ class ViewController: UIViewController {
         let request = AcceptSDKRequest()
         request.merchantAuthentication.name = kClinetName
         request.merchantAuthentication.clientKey = kClinetKey
-//        request.merchantAuthentication.fingerPrint.hashValue = "37072f4703346059fbde79b4c8babdcd"
-//        request.merchantAuthentication.fingerPrint.sequence = "abc"
-//        request.merchantAuthentication.fingerPrint.timestamp = "1468821505"
-//        request.merchantAuthentication.fingerPrint.currencyCode = "USD"
-//        request.merchantAuthentication.fingerPrint.amount = "4.50"
+        if let fp = FingerPrint(inHashValue: "37072f4703346059fbde79b4c8babdcd", inSequence: "abc", inTimestamp: "1468821505", inCurrencyCode: "USD", inAmount: "4.50") {
+            request.merchantAuthentication.fingerPrint = fp
+        }
 
         request.securePaymentContainerRequest.webCheckOutDataType.token.cardNumber = self.cardNumberBuffer
         request.securePaymentContainerRequest.webCheckOutDataType.token.expirationMonth = self.cardExpirationMonth
