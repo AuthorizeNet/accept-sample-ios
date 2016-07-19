@@ -10,7 +10,7 @@ import UIKit
 import AcceptSDK
 
 
-let kClinetName = "5KP3u95bQpv"
+let kClinetName = "5KP3u95bQpv asghgafhgafh hagfhgafhf7tabfahjsf "
 let kClinetKey  = "5FcB6WrfHGS76gHW3v7btBCE3HuuBuke9Pj96Ztfn5R32G5ep42vne7MCWZtAucY"
 
 let kAcceptSDKDemoCreditCardLength:Int = 16
@@ -49,10 +49,10 @@ class ViewController: UIViewController {
         self.initializeUIControls()
         self.initializeMembers()
         
-        self.getTokenButton.enabled = false
+        //self.getTokenButton.enabled = false
         
         //this is only for quick test...
-        //self.initializeTestData()
+        self.initializeTestData()
     }
     
     func initializeTestData() {
@@ -98,7 +98,7 @@ class ViewController: UIViewController {
     
     @IBAction func getTokenButtonTapped(sender: AnyObject) {
         self.activityIndicatorAcceptSDKDemo.startAnimating()
-        self.getTokenButton.enabled = false
+        //self.getTokenButton.enabled = false
         
         self.getToken()
     }
@@ -350,7 +350,7 @@ class ViewController: UIViewController {
                 }
                 else
                 {
-                    self.getTokenButton.enabled = false
+                    //self.getTokenButton.enabled = false
                 }
 
             break;
@@ -384,7 +384,7 @@ class ViewController: UIViewController {
                 }
                 else
                 {
-                    self.getTokenButton.enabled = false
+                    //self.getTokenButton.enabled = false
                 }
 
             break;
@@ -427,7 +427,7 @@ class ViewController: UIViewController {
                 }
                 else
                 {
-                    self.getTokenButton.enabled = false
+                    //self.getTokenButton.enabled = false
                 }
 
             break;
@@ -450,7 +450,7 @@ class ViewController: UIViewController {
                 }
                 else
                 {
-                    self.getTokenButton.enabled = false
+                    //self.getTokenButton.enabled = false
                 }
 
             break;
