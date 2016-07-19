@@ -10,7 +10,7 @@ import UIKit
 import AcceptSDK
 
 
-let kClinetName = "5KP3u95bQpv asghgafhgafh hagfhgafhf7tabfahjsf "
+let kClinetName = "5KP3u95bQpv"
 let kClinetKey  = "5FcB6WrfHGS76gHW3v7btBCE3HuuBuke9Pj96Ztfn5R32G5ep42vne7MCWZtAucY"
 
 let kAcceptSDKDemoCreditCardLength:Int = 16
@@ -49,10 +49,10 @@ class ViewController: UIViewController {
         self.initializeUIControls()
         self.initializeMembers()
         
-        //self.getTokenButton.enabled = false
+        self.getTokenButton.enabled = false
         
         //this is only for quick test...
-        self.initializeTestData()
+        //self.initializeTestData()
     }
     
     func initializeTestData() {
@@ -98,7 +98,7 @@ class ViewController: UIViewController {
     
     @IBAction func getTokenButtonTapped(sender: AnyObject) {
         self.activityIndicatorAcceptSDKDemo.startAnimating()
-        //self.getTokenButton.enabled = false
+        self.getTokenButton.enabled = false
         
         self.getToken()
     }
@@ -109,11 +109,11 @@ class ViewController: UIViewController {
         
         let request = AcceptSDKRequest()
         request.merchantAuthentication.name = kClinetName
-        request.merchantAuthentication.clientKey = kClinetKey
-        if let fp = FingerPrint(inHashValue: "37072f4703346059fbde79b4c8babdcd", inSequence: "abc", inTimestamp: "1468821505", inCurrencyCode: "USD", inAmount: "4.50") {
+//        request.merchantAuthentication.clientKey = kClinetKey
+        if let fp = FingerPrint(inHashValue: "37072f4703346059fbde79b4c8babdcd", inSequence: "abc", inTimestamp: "1468821505", inCurrencyCode: "USD", inAmount: "4.00") {
             request.merchantAuthentication.fingerPrint = fp
         }
-
+        
         request.securePaymentContainerRequest.webCheckOutDataType.token.cardNumber = self.cardNumberBuffer
         request.securePaymentContainerRequest.webCheckOutDataType.token.expirationMonth = self.cardExpirationMonth
         request.securePaymentContainerRequest.webCheckOutDataType.token.expirationYear = self.cardExpirationYear
@@ -134,7 +134,7 @@ class ViewController: UIViewController {
             self.getTokenButton.enabled = true
             let output = String(format: "Response:  %@\nError code: %@\nError text:   %@", inError.getMessages().getResultCode(), inError.getMessages().getMessages()[0].getCode(), inError.getMessages().getMessages()[0].getText())
             self.textViewShowResults.text = output
-            print(inError)
+            print(output)
         }
     }
 
@@ -348,7 +348,7 @@ class ViewController: UIViewController {
                 }
                 else
                 {
-                    //self.getTokenButton.enabled = false
+                    self.getTokenButton.enabled = false
                 }
 
             break;
@@ -382,7 +382,7 @@ class ViewController: UIViewController {
                 }
                 else
                 {
-                    //self.getTokenButton.enabled = false
+                    self.getTokenButton.enabled = false
                 }
 
             break;
@@ -425,7 +425,7 @@ class ViewController: UIViewController {
                 }
                 else
                 {
-                    //self.getTokenButton.enabled = false
+                    self.getTokenButton.enabled = false
                 }
 
             break;
@@ -448,7 +448,7 @@ class ViewController: UIViewController {
                 }
                 else
                 {
-                    //self.getTokenButton.enabled = false
+                    self.getTokenButton.enabled = false
                 }
 
             break;
