@@ -1,0 +1,28 @@
+{
+  "name": "AcceptSDK",
+  "authors": "VISA Inc.",
+  "version": "1.0.0",
+  "summary": "VISA iOS Accept SDK",
+  "homepage": "https://visa.com",
+  "license": {
+    "type": "VISA",
+    "text": "                            © VISA Inc., 2016. All rights reserved.\n"
+  },
+  "platforms": {
+    "ios": "8.4"
+  },
+  "source": {
+    "git": "https://github.com/kbollepa/accept-sdk-ios.git"
+  },
+  "requires_arc": true,
+  "default_subspecs": "Source",
+  "subspecs": [
+    {
+      "name": "Source",
+      "source_files": "Accept/accept-sdk-ios/AcceptSDK/**/*.{swift}",
+      "xcconfig": {
+        "ENABLE_BITCODE": "NO"
+      }
+    }
+  ]
+}

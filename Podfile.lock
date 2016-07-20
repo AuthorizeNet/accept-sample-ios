@@ -1,0 +1,18 @@
+PODS:
+  - AcceptSDK (1.0.0):
+    - AcceptSDK/Source (= 1.0.0)
+  - AcceptSDK/Source (1.0.0)
+
+DEPENDENCIES:
+  - AcceptSDK (from `../..`)
+
+EXTERNAL SOURCES:
+  AcceptSDK:
+    :path: ../..
+
+SPEC CHECKSUMS:
+  AcceptSDK: 0156cbfd280b734e6ff3c06f1e08555c388a2202
+
+PODFILE CHECKSUM: dc7ef884f2d469b06861302825ca572b21fc39e8
+
+COCOAPODS: 1.0.1
