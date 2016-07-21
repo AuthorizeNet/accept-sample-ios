@@ -1,18 +1,12 @@
 PODS:
-  - AcceptSDK (1.0.0):
-    - AcceptSDK/Source (= 1.0.0)
-  - AcceptSDK/Source (1.0.0)
+  - AuthorizeNetAccept (0.0.1):
+    - AuthorizeNetAccept/Source (= 0.0.1)
+  - AuthorizeNetAccept/Source (0.0.1)
 
 DEPENDENCIES:
-  - AcceptSDK (from `../..`)
-
-EXTERNAL SOURCES:
-  AcceptSDK:
-    :path: ../..
+  - AuthorizeNetAccept
 
 SPEC CHECKSUMS:
-  AcceptSDK: 0156cbfd280b734e6ff3c06f1e08555c388a2202
+  AuthorizeNetAccept: 7ee2d66a530dd05f6adba8960a570dcad6238bea
 
-PODFILE CHECKSUM: dc7ef884f2d469b06861302825ca572b21fc39e8
-
-COCOAPODS: 1.0.1
+COCOAPODS: 0.39.0

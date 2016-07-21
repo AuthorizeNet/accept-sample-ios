@@ -7,11 +7,11 @@
 //
 
 import UIKit
-import AcceptSDK
+import AuthorizeNetAccept
 
 
-let kClinetName = "5KP3u95bQpv"
-let kClinetKey  = "5FcB6WrfHGS76gHW3v7btBCE3HuuBuke9Pj96Ztfn5R32G5ep42vne7MCWZtAucY"
+let kClientName = "5KP3u95bQpv"
+let kClientKey  = "5FcB6WrfHGS76gHW3v7btBCE3HuuBuke9Pj96Ztfn5R32G5ep42vne7MCWZtAucY"
 
 let kAcceptSDKDemoCreditCardLength:Int = 16
 let kAcceptSDKDemoCreditCardLengthPlusSpaces:Int = (kAcceptSDKDemoCreditCardLength + 3)
@@ -108,11 +108,8 @@ class ViewController: UIViewController {
         let handler = AcceptSDKHandler(environment: AcceptSDKEnvironment.ENV_TEST)
         
         let request = AcceptSDKRequest()
-        request.merchantAuthentication.name = kClinetName
-//        request.merchantAuthentication.clientKey = kClinetKey
-        if let fp = FingerPrint(inHashValue: "37072f4703346059fbde79b4c8babdcd", inSequence: "abc", inTimestamp: "1468821505", inCurrencyCode: "USD", inAmount: "4.00") {
-            request.merchantAuthentication.fingerPrint = fp
-        }
+        request.merchantAuthentication.name = kClientName
+        request.merchantAuthentication.clientKey = kClientKey
         
         request.securePaymentContainerRequest.webCheckOutDataType.token.cardNumber = self.cardNumberBuffer
         request.securePaymentContainerRequest.webCheckOutDataType.token.expirationMonth = self.cardExpirationMonth

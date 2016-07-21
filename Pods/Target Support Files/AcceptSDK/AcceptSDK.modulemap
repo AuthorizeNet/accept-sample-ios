@@ -1,6 +1,0 @@
-framework module AcceptSDK {
-  umbrella header "AcceptSDK-umbrella.h"
-
-  export *
-  module * { export * }
-}
