@@ -367,6 +367,7 @@
                         <outlet property="expirationMonthTextField" destination="f0J-Fb-rP2" id="WwN-3H-7IR"/>
                         <outlet property="expirationYearTextField" destination="1L2-Xk-KCp" id="RAN-gR-zvJ"/>
                         <outlet property="getTokenButton" destination="Gmy-zN-UHS" id="XDQ-9d-wE5"/>
+                        <outlet property="headerView" destination="zGx-uC-pXU" id="wL4-PW-CL2"/>
                         <outlet property="textViewShowResults" destination="bI2-5m-2lU" id="Ycl-fe-Gbk"/>
                     </connections>
                 </viewController>
