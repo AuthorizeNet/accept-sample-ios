@@ -36,7 +36,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var getTokenButton:UIButton!
     @IBOutlet weak var activityIndicatorAcceptSDKDemo:UIActivityIndicatorView!
     @IBOutlet weak var textViewShowResults:UITextView!
-    
+    @IBOutlet weak var headerView:UIView!
+
     private var cardNumber:String!
     private var cardExpirationMonth:String!
     private var cardExpirationYear:String!
@@ -45,25 +46,15 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.headerView.backgroundColor = UIColor(colorLiteralRed: 48/255, green: 85/255, blue: 112/255, alpha: 1)
+
         self.setUIControlsTagValues()
         self.initializeUIControls()
         self.initializeMembers()
         
-        self.getTokenButton.enabled = false
-        
-        //this is only for quick test...
-        //self.initializeTestData()
+        self.updateTokenButton(false)
     }
     
-    func initializeTestData() {
-        self.getTokenButton.enabled = true;
-
-        self.cardNumberBuffer = "378282246310005"
-        self.cardExpirationYear = "2021"
-        self.cardExpirationMonth = "12"
-        self.cardVerificationCode = "1234"
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -98,11 +89,20 @@ class ViewController: UIViewController {
     
     @IBAction func getTokenButtonTapped(sender: AnyObject) {
         self.activityIndicatorAcceptSDKDemo.startAnimating()
-        self.getTokenButton.enabled = false
+        self.updateTokenButton(false)
         
         self.getToken()
     }
 
+    func updateTokenButton(isEnable: Bool) {
+        self.getTokenButton.enabled = isEnable
+        if isEnable {
+            self.getTokenButton.backgroundColor = UIColor(colorLiteralRed: 48/255, green: 85/255, blue: 112/255, alpha: 1)
+        } else {
+            self.getTokenButton.backgroundColor = UIColor(colorLiteralRed: 48/255, green: 85/255, blue: 112/255, alpha: 0.2)
+        }
+    }
+    
     func getToken() {
         
         let handler = AcceptSDKHandler(environment: AcceptSDKEnvironment.ENV_TEST)
@@ -118,7 +118,8 @@ class ViewController: UIViewController {
 
         handler!.getTokenWithRequest(request, successHandler: { (inResponse:AcceptSDKTokenResponse) -> () in
             dispatch_async(dispatch_get_main_queue(),{
-                self.getTokenButton.enabled = true
+                self.updateTokenButton(true)
+
                 self.activityIndicatorAcceptSDKDemo.stopAnimating()
                 print("Token--->%@", inResponse.getOpaqueData().getDataValue())
                 var output = String(format: "Response: %@\nData Value: %@ \nDescription: %@", inResponse.getMessages().getResultCode(), inResponse.getOpaqueData().getDataValue(), inResponse.getOpaqueData().getDataDescriptor())
@@ -128,7 +129,8 @@ class ViewController: UIViewController {
             })
         }) { (inError:AcceptSDKErrorResponse) -> () in
             self.activityIndicatorAcceptSDKDemo.stopAnimating()
-            self.getTokenButton.enabled = true
+            self.updateTokenButton(true)
+
             let output = String(format: "Response:  %@\nError code: %@\nError text:   %@", inError.getMessages().getResultCode(), inError.getMessages().getMessages()[0].getCode(), inError.getMessages().getMessages()[0].getText())
             self.textViewShowResults.text = output
             self.textViewShowResults.textColor = UIColor.redColor()
@@ -342,11 +344,12 @@ class ViewController: UIViewController {
                 
                 if (self.validInputs())
                 {
-                    self.getTokenButton.enabled = true
+                    self.updateTokenButton(true)
+
                 }
                 else
                 {
-                    self.getTokenButton.enabled = false
+                    self.updateTokenButton(false)
                 }
 
             break;
@@ -376,11 +379,11 @@ class ViewController: UIViewController {
                 
                 if (self.validInputs())
                 {
-                    self.getTokenButton.enabled = true
+                    self.updateTokenButton(true)
                 }
                 else
                 {
-                    self.getTokenButton.enabled = false
+                    self.updateTokenButton(false)
                 }
 
             break;
@@ -419,11 +422,11 @@ class ViewController: UIViewController {
                 
                 if (self.validInputs())
                 {
-                    self.getTokenButton.enabled = true
+                    self.updateTokenButton(true)
                 }
                 else
                 {
-                    self.getTokenButton.enabled = false
+                    self.updateTokenButton(false)
                 }
 
             break;
@@ -442,11 +445,11 @@ class ViewController: UIViewController {
                 
                 if (self.validInputs())
                 {
-                    self.getTokenButton.enabled = true
+                    self.updateTokenButton(true)
                 }
                 else
                 {
-                    self.getTokenButton.enabled = false
+                    self.updateTokenButton(false)
                 }
 
             break;
