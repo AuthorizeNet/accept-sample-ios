@@ -5,5 +5,5 @@ platform :ios, '8.4'
 use_frameworks!
 
 target 'AcceptSDKSampleApp' do
-pod 'AuthorizeNetAccept', :path => '../../'
+pod 'AuthorizeNetAccept'
 end
