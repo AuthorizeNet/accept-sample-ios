@@ -84,7 +84,7 @@ class ViewController: UIViewController {
     func darkBlueColor() -> UIColor {
         let color = UIColor(colorLiteralRed: 51.0/255.0, green: 102.0/255.0, blue: 153.0/255.0, alpha: 1.0)
         
-        return color;
+        return color 
     }
     
     @IBAction func getTokenButtonTapped(sender: AnyObject) {
@@ -270,8 +270,6 @@ class ViewController: UIViewController {
                 }
                 self.formatCardNumber(textField)
                 return false
-                
-            break;
         case 2:
 
             if (string.characters.count > 0) {
@@ -298,13 +296,13 @@ class ViewController: UIViewController {
                 }
             }
 
-            break;
+            break
             
         default:
-            break;
+            break
         }
         
-        return result;
+        return result 
 
     }
     
@@ -329,7 +327,7 @@ class ViewController: UIViewController {
             
         case 1:
 
-            self.cardNumber = self.cardNumberBuffer;
+            self.cardNumber = self.cardNumberBuffer 
                 
                 let luhnResult = validator.validateCardWithLuhnAlgorithm(self.cardNumberBuffer)
                 
@@ -339,7 +337,7 @@ class ViewController: UIViewController {
                 }
                 else
                 {
-                    self.cardNumberTextField.textColor = self.darkBlueColor() //[UIColor greenColor];
+                    self.cardNumberTextField.textColor = self.darkBlueColor() //[UIColor greenColor] 
                 }
                 
                 if (self.validInputs())
@@ -352,87 +350,20 @@ class ViewController: UIViewController {
                     self.updateTokenButton(false)
                 }
 
-            break;
+            break
         case 2:
+                self.validateMonth(textField)
+                self.validateYear(textField)
 
-            self.cardExpirationMonth = textField.text;
-                
-                if (self.expirationMonthTextField.text?.characters.count == 1)
-                {
-                    if ((textField.text == "0") == false) {
-                        self.expirationMonthTextField.text = "0".stringByAppendingString(self.expirationMonthTextField.text!)
-                    }
-                }
-                
-                let newMonth = Int(textField.text!)
-                
-                if ((newMonth >= AcceptSDKCardFieldsValidatorConstants.kInAppSDKCardExpirationMonthMin)  && (newMonth <= AcceptSDKCardFieldsValidatorConstants.kInAppSDKCardExpirationMonthMax))
-                {
-                    self.expirationMonthTextField.textColor = self.darkBlueColor() //[UIColor greenColor];
-                    
-                }
-                else
-                {
-                    self.expirationMonthTextField.textColor = UIColor.redColor()
-                    
-                }
-                
-                if (self.validInputs())
-                {
-                    self.updateTokenButton(true)
-                }
-                else
-                {
-                    self.updateTokenButton(false)
-                }
-
-            break;
+            break
         case 3:
+            
+            self.validateYear(textField)
 
-            self.cardExpirationYear = textField.text;
-                
-                let newYear = Int(textField.text!)
-                if ((newYear >= validator.cardExpirationYearMin())  && (newYear <= AcceptSDKCardFieldsValidatorConstants.kInAppSDKCardExpirationYearMax))
-                {
-                    self.expirationYearTextField.textColor = self.darkBlueColor() //[UIColor greenColor];
-                }
-                else
-                {
-                    self.expirationYearTextField.textColor = UIColor.redColor()
-                }
-                
-                if (self.expirationYearTextField.text?.characters.count == 0)
-                {
-                    return;
-                }
-                if (self.expirationMonthTextField.text?.characters.count == 0)
-                {
-                    return;
-                }
-                if (validator.validateExpirationDate(self.expirationMonthTextField.text!, inYear: self.expirationYearTextField.text!))
-                {
-                    self.expirationMonthTextField.textColor = self.darkBlueColor()
-                    self.expirationYearTextField.textColor = self.darkBlueColor()
-                }
-                else
-                {
-                    self.expirationMonthTextField.textColor = UIColor.redColor()
-                    self.expirationYearTextField.textColor = UIColor.redColor()
-                }
-                
-                if (self.validInputs())
-                {
-                    self.updateTokenButton(true)
-                }
-                else
-                {
-                    self.updateTokenButton(false)
-                }
-
-            break;
+            break
         case 4:
 
-            self.cardVerificationCode = textField.text;
+            self.cardVerificationCode = textField.text 
                 
                 if (validator.validateSecurityCodeWithString(self.cardVerificationCodeTextField.text!))
                 {
@@ -452,20 +383,98 @@ class ViewController: UIViewController {
                     self.updateTokenButton(false)
                 }
 
-            break;
+            break
             
         default:
-            break;
+            break
         }
     }
 
     func textFieldShouldClear(textField: UITextField) -> Bool {
         if (textField == self.cardNumberTextField)
         {
-            self.cardNumberBuffer = String();
+            self.cardNumberBuffer = String() 
         }
         
-        return true;
+        return true 
     }
+    
+    func validateYear(textField: UITextField) {
+        
+        self.cardExpirationYear = textField.text
+        let validator = AcceptSDKCardFieldsValidator()
+
+        let newYear = Int(textField.text!)
+        if ((newYear >= validator.cardExpirationYearMin())  && (newYear <= AcceptSDKCardFieldsValidatorConstants.kInAppSDKCardExpirationYearMax))
+        {
+            self.expirationYearTextField.textColor = self.darkBlueColor() //[UIColor greenColor]
+        }
+        else
+        {
+            self.expirationYearTextField.textColor = UIColor.redColor()
+        }
+        
+        if (self.expirationYearTextField.text?.characters.count == 0)
+        {
+            return
+        }
+        if (self.expirationMonthTextField.text?.characters.count == 0)
+        {
+            return
+        }
+        if (validator.validateExpirationDate(self.expirationMonthTextField.text!, inYear: self.expirationYearTextField.text!))
+        {
+            self.expirationMonthTextField.textColor = self.darkBlueColor()
+            self.expirationYearTextField.textColor = self.darkBlueColor()
+        }
+        else
+        {
+            self.expirationMonthTextField.textColor = UIColor.redColor()
+            self.expirationYearTextField.textColor = UIColor.redColor()
+        }
+        
+        if (self.validInputs())
+        {
+            self.updateTokenButton(true)
+        }
+        else
+        {
+            self.updateTokenButton(false)
+        }
+    }
+    
+    func validateMonth(textField: UITextField) {
+        
+        self.cardExpirationMonth = textField.text
+        
+        if (self.expirationMonthTextField.text?.characters.count == 1)
+        {
+            if ((textField.text == "0") == false) {
+                self.expirationMonthTextField.text = "0".stringByAppendingString(self.expirationMonthTextField.text!)
+            }
+        }
+        
+        let newMonth = Int(textField.text!)
+        
+        if ((newMonth >= AcceptSDKCardFieldsValidatorConstants.kInAppSDKCardExpirationMonthMin)  && (newMonth <= AcceptSDKCardFieldsValidatorConstants.kInAppSDKCardExpirationMonthMax))
+        {
+            self.expirationMonthTextField.textColor = self.darkBlueColor() //[UIColor greenColor]
+            
+        }
+        else
+        {
+            self.expirationMonthTextField.textColor = UIColor.redColor()
+        }
+        
+        if (self.validInputs())
+        {
+            self.updateTokenButton(true)
+        }
+        else
+        {
+            self.updateTokenButton(false)
+        }
+    }
+
 }
 
