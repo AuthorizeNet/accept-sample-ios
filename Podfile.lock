@@ -4,9 +4,15 @@ PODS:
   - AuthorizeNetAccept/Source (0.0.1)
 
 DEPENDENCIES:
-  - AuthorizeNetAccept
+  - AuthorizeNetAccept (from `../../`)
+
+EXTERNAL SOURCES:
+  AuthorizeNetAccept:
+    :path: ../../
 
 SPEC CHECKSUMS:
-  AuthorizeNetAccept: 7ee2d66a530dd05f6adba8960a570dcad6238bea
+  AuthorizeNetAccept: 7e803d4627a863d9879f22efa83cca5e3bd1eb19
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: a633821264e01d25840d1ecebef90d30221013f2
+
+COCOAPODS: 1.0.1

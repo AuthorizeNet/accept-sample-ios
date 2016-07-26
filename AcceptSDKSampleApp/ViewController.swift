@@ -131,6 +131,7 @@ class ViewController: UIViewController {
             self.getTokenButton.enabled = true
             let output = String(format: "Response:  %@\nError code: %@\nError text:   %@", inError.getMessages().getResultCode(), inError.getMessages().getMessages()[0].getCode(), inError.getMessages().getMessages()[0].getText())
             self.textViewShowResults.text = output
+            self.textViewShowResults.textColor = UIColor.redColor()
             print(output)
         }
     }
