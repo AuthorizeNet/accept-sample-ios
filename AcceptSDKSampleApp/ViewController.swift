@@ -71,6 +71,10 @@ class ViewController: UIViewController {
         self.expirationMonthTextField.text = ""
         self.expirationYearTextField.text = ""
         self.cardVerificationCodeTextField.text = ""
+        self.textChangeDelegate(self.cardNumberTextField)
+        self.textChangeDelegate(self.expirationMonthTextField)
+        self.textChangeDelegate(self.expirationYearTextField)
+        self.textChangeDelegate(self.cardVerificationCodeTextField)
     }
     
     func initializeMembers() {
@@ -353,12 +357,14 @@ class ViewController: UIViewController {
             break
         case 2:
                 self.validateMonth(textField)
-                self.validateYear(textField)
+                if let expYear = self.expirationYearTextField.text {
+                    self.validateYear(expYear)
+                }
 
             break
         case 3:
             
-            self.validateYear(textField)
+            self.validateYear(textField.text!)
 
             break
         case 4:
@@ -399,12 +405,12 @@ class ViewController: UIViewController {
         return true 
     }
     
-    func validateYear(textField: UITextField) {
+    func validateYear(textFieldText: String) {
         
-        self.cardExpirationYear = textField.text
+        self.cardExpirationYear = textFieldText
         let validator = AcceptSDKCardFieldsValidator()
 
-        let newYear = Int(textField.text!)
+        let newYear = Int(textFieldText)
         if ((newYear >= validator.cardExpirationYearMin())  && (newYear <= AcceptSDKCardFieldsValidatorConstants.kInAppSDKCardExpirationYearMax))
         {
             self.expirationYearTextField.textColor = self.darkBlueColor() //[UIColor greenColor]
@@ -476,5 +482,14 @@ class ViewController: UIViewController {
         }
     }
 
+    func textChangeDelegate(textField: UITextField) {
+        NSNotificationCenter.defaultCenter().addObserverForName(UITextFieldTextDidChangeNotification, object: textField, queue: nil, usingBlock: { note in
+                if (self.validInputs()) {
+                    self.updateTokenButton(true)
+                } else {
+                    self.updateTokenButton(false)
+                }
+            })
+    }
 }
 
