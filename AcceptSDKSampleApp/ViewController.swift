@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import AuthorizeNetAccept
+import AcceptSDK
 
 
 let kClientName = "5KP3u95bQpv"
