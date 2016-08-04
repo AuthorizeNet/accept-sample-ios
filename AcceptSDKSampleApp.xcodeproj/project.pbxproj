@@ -13,6 +13,7 @@
 		A027CA451D38C06D007A8D73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A027CA441D38C06D007A8D73 /* Assets.xcassets */; };
 		A027CA481D38C06D007A8D73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A027CA461D38C06D007A8D73 /* LaunchScreen.storyboard */; };
 		A027CA531D38C06E007A8D73 /* AcceptSDKSampleAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A027CA521D38C06E007A8D73 /* AcceptSDKSampleAppTests.swift */; };
+		A092D5051D5315F8002E03D4 /* ApplePayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A092D5041D5315F8002E03D4 /* ApplePayViewController.swift */; };
 		ED075D1BA95F9AD2FDDF631E /* Pods_AcceptSDKSampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CF68FDB7D2B240EE7405485 /* Pods_AcceptSDKSampleApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,8 @@
 		A027CA4E1D38C06D007A8D73 /* AcceptSDKSampleAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AcceptSDKSampleAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A027CA521D38C06E007A8D73 /* AcceptSDKSampleAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptSDKSampleAppTests.swift; sourceTree = "<group>"; };
 		A027CA541D38C06E007A8D73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A092D5041D5315F8002E03D4 /* ApplePayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplePayViewController.swift; sourceTree = "<group>"; };
+		A092D5061D5320BD002E03D4 /* AcceptSDKSampleApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AcceptSDKSampleApp.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +87,9 @@
 		A027CA3C1D38C06D007A8D73 /* AcceptSDKSampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				A092D5061D5320BD002E03D4 /* AcceptSDKSampleApp.entitlements */,
 				A027CA3D1D38C06D007A8D73 /* AppDelegate.swift */,
+				A092D5041D5315F8002E03D4 /* ApplePayViewController.swift */,
 				A027CA3F1D38C06D007A8D73 /* ViewController.swift */,
 				A027CA411D38C06D007A8D73 /* Main.storyboard */,
 				A027CA441D38C06D007A8D73 /* Assets.xcassets */,
@@ -174,6 +179,11 @@
 					A027CA391D38C06D007A8D73 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 8WQ4DJVQC2;
+						SystemCapabilities = {
+							com.apple.OMC = {
+								enabled = 1;
+							};
+						};
 					};
 					A027CA4D1D38C06D007A8D73 = {
 						CreatedOnToolsVersion = 7.3;
@@ -274,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A027CA401D38C06D007A8D73 /* ViewController.swift in Sources */,
+				A092D5051D5315F8002E03D4 /* ApplePayViewController.swift in Sources */,
 				A027CA3E1D38C06D007A8D73 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -406,11 +417,12 @@
 			baseConfigurationReference = 39EDE99B6EDCEB262FA56C77 /* Pods-AcceptSDKSampleApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AcceptSDKSampleApp/AcceptSDKSampleApp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = AcceptSDKSampleApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = net.authorize.mobilemerchant;
+				PRODUCT_BUNDLE_IDENTIFIER = net.authorize.AuthnetLab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -420,11 +432,12 @@
 			baseConfigurationReference = 0420F9837C7B2E34CDB3CD51 /* Pods-AcceptSDKSampleApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AcceptSDKSampleApp/AcceptSDKSampleApp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = AcceptSDKSampleApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = net.authorize.mobilemerchant;
+				PRODUCT_BUNDLE_IDENTIFIER = net.authorize.AuthnetLab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

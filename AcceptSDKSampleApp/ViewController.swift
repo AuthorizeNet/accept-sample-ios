@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import AcceptSDK
+import AuthorizeNetAccept
 
 
 let kClientName = "5KP3u95bQpv"
@@ -96,6 +96,10 @@ class ViewController: UIViewController {
         self.updateTokenButton(false)
         
         self.getToken()
+    }
+
+    @IBAction func backButtonButtonTapped(sender: AnyObject) {
+        self.navigationController?.popViewControllerAnimated(true)
     }
 
     func updateTokenButton(isEnable: Bool) {
