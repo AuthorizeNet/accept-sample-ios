@@ -47,8 +47,7 @@ class ApplePayViewController:UIViewController, PKPaymentAuthorizationViewControl
         request.merchantCapabilities = PKMerchantCapability.Capability3DS
         
         request.paymentSummaryItems = [
-            PKPaymentSummaryItem(label: "T-Shirt", amount: 0.1),
-            PKPaymentSummaryItem(label: "Watch", amount: 0.1)
+            PKPaymentSummaryItem(label: "Total", amount: 254.00)
         ]
 
         let applePayController = PKPaymentAuthorizationViewController(paymentRequest: request)
@@ -64,11 +63,12 @@ class ApplePayViewController:UIViewController, PKPaymentAuthorizationViewControl
             let messsage = String("Data Value: %@", self.base64forData(payment.token.paymentData))
             let alert = UIAlertController(title: "Authorization Success", message: messsage, preferredStyle: .Alert)
             alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
+            completion(.Success)
         } else {
             let alert = UIAlertController(title: "Authorization Failed!", message: nil, preferredStyle: .Alert)
             alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
+            completion(.Failure)
         }
-        
     }
     
     func paymentAuthorizationViewControllerDidFinish(controller: PKPaymentAuthorizationViewController) {
