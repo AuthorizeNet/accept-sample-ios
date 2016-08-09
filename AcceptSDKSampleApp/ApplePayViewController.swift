@@ -59,11 +59,29 @@ class ApplePayViewController:UIViewController, PKPaymentAuthorizationViewControl
 
     func paymentAuthorizationViewController(controller: PKPaymentAuthorizationViewController, didAuthorizePayment payment: PKPayment, completion: ((PKPaymentAuthorizationStatus) -> Void)) {
         print("paymentAuthorizationViewController delegates called")
+
+        if payment.token.paymentData.length > 0 {
+            let messsage = String("Data Value: %@", self.base64forData(payment.token.paymentData))
+            let alert = UIAlertController(title: "Authorization Success", message: messsage, preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
+        } else {
+            let alert = UIAlertController(title: "Authorization Failed!", message: nil, preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
+        }
+        
     }
     
     func paymentAuthorizationViewControllerDidFinish(controller: PKPaymentAuthorizationViewController) {
         controller.dismissViewControllerAnimated(true, completion: nil)
         print("paymentAuthorizationViewControllerDidFinish called")
+    }
+    
+    func base64forData(theData: NSData) -> String {
+        let charSet = NSCharacterSet.URLQueryAllowedCharacterSet()
+
+        let paymentString = NSString(data: theData, encoding: NSUTF8StringEncoding)!.stringByAddingPercentEncodingWithAllowedCharacters(charSet)
+        
+        return paymentString!
     }
     
 }
