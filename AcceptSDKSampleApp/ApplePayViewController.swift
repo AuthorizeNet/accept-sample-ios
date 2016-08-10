@@ -64,9 +64,11 @@ class ApplePayViewController:UIViewController, PKPaymentAuthorizationViewControl
             let messsage = String("Data Value: %@", self.base64forData(payment.token.paymentData))
             let alert = UIAlertController(title: "Authorization Success", message: messsage, preferredStyle: .Alert)
             alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
+            return self.presentViewController(alert, animated: true, completion: nil)
         } else {
             let alert = UIAlertController(title: "Authorization Failed!", message: nil, preferredStyle: .Alert)
             alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
+            return self.presentViewController(alert, animated: true, completion: nil)
         }
         
     }
