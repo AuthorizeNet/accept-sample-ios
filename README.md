@@ -9,6 +9,10 @@ Clone this repository
 git clone https://github.com/AuthorizeNet/accept-sample-ios.git
 ````
 
-Open the project XCode and run.
+Open the project XCode and run.  
+  
+## Examples  
+  
+  Sample app demonstrates usage of Apple Pay and the Accept Mobile SDK
 
 ![Apple Pay](screenshot2.png?raw=true "Apple Pay")  ![Accept Token](screenshot1.png?raw=true "Accept Token")
