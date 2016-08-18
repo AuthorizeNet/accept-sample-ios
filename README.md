@@ -11,4 +11,4 @@ git clone https://github.com/AuthorizeNet/accept-sample-ios.git
 
 Open the project XCode and run.
 
-![Apple Pay](screenshot1.png?raw=true "Apple Pay")  ![Accept Token](screenshot2.png?raw=true "Accept Token")
+![Apple Pay](screenshot2.png?raw=true "Apple Pay")  ![Accept Token](screenshot1.png?raw=true "Accept Token")
