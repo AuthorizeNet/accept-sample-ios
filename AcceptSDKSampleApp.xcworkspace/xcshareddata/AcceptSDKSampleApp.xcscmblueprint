@@ -10,7 +10,7 @@
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "7A28174A-7403-4B54-94D4-6A07B8BD3760",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "A768CDC7591A233EE9A4FDFE5C49981C0B636613" : "accept-sdk-ios\/",
-    "DF815FF68C3885B7743314C7EB31B4140DE92A60" : "accept-sample-ios\/"
+    "DF815FF68C3885B7743314C7EB31B4140DE92A60" : "accept-sample-ios-1\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "AcceptSDKSampleApp",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
