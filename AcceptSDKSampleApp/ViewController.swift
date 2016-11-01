@@ -8,6 +8,44 @@
 
 import UIKit
 import AuthorizeNetAccept
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
+fileprivate func >= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l >= r
+  default:
+    return !(lhs < rhs)
+  }
+}
+
+fileprivate func <= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l <= r
+  default:
+    return !(rhs < lhs)
+  }
+}
+
 
 
 let kClientName = "5KP3u95bQpv"
@@ -38,11 +76,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var textViewShowResults:UITextView!
     @IBOutlet weak var headerView:UIView!
 
-    private var cardNumber:String!
-    private var cardExpirationMonth:String!
-    private var cardExpirationYear:String!
-    private var cardVerificationCode:String!
-    private var cardNumberBuffer:String!
+    fileprivate var cardNumber:String!
+    fileprivate var cardExpirationMonth:String!
+    fileprivate var cardExpirationYear:String!
+    fileprivate var cardVerificationCode:String!
+    fileprivate var cardNumberBuffer:String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,19 +129,19 @@ class ViewController: UIViewController {
         return color 
     }
     
-    @IBAction func getTokenButtonTapped(sender: AnyObject) {
+    @IBAction func getTokenButtonTapped(_ sender: AnyObject) {
         self.activityIndicatorAcceptSDKDemo.startAnimating()
         self.updateTokenButton(false)
         
         self.getToken()
     }
 
-    @IBAction func backButtonButtonTapped(sender: AnyObject) {
-        self.navigationController?.popViewControllerAnimated(true)
+    @IBAction func backButtonButtonTapped(_ sender: AnyObject) {
+        self.navigationController?.popViewController(animated: true)
     }
 
-    func updateTokenButton(isEnable: Bool) {
-        self.getTokenButton.enabled = isEnable
+    func updateTokenButton(_ isEnable: Bool) {
+        self.getTokenButton.isEnabled = isEnable
         if isEnable {
             self.getTokenButton.backgroundColor = UIColor(colorLiteralRed: 48/255, green: 85/255, blue: 112/255, alpha: 1)
         } else {
@@ -125,7 +163,7 @@ class ViewController: UIViewController {
         request.securePaymentContainerRequest.webCheckOutDataType.token.cardCode = self.cardVerificationCode
 
         handler!.getTokenWithRequest(request, successHandler: { (inResponse:AcceptSDKTokenResponse) -> () in
-            dispatch_async(dispatch_get_main_queue(),{
+            DispatchQueue.main.async(execute: {
                 self.updateTokenButton(true)
 
                 self.activityIndicatorAcceptSDKDemo.stopAnimating()
@@ -133,7 +171,7 @@ class ViewController: UIViewController {
                 var output = String(format: "Response: %@\nData Value: %@ \nDescription: %@", inResponse.getMessages().getResultCode(), inResponse.getOpaqueData().getDataValue(), inResponse.getOpaqueData().getDataDescriptor())
                 output = output + String(format: "\nMessage Code: %@\nMessage Text: %@", inResponse.getMessages().getMessages()[0].getCode(), inResponse.getMessages().getMessages()[0].getText())
                 self.textViewShowResults.text = output
-                self.textViewShowResults.textColor = UIColor.greenColor()
+                self.textViewShowResults.textColor = UIColor.green
             })
         }) { (inError:AcceptSDKErrorResponse) -> () in
             self.activityIndicatorAcceptSDKDemo.stopAnimating()
@@ -141,12 +179,12 @@ class ViewController: UIViewController {
 
             let output = String(format: "Response:  %@\nError code: %@\nError text:   %@", inError.getMessages().getResultCode(), inError.getMessages().getMessages()[0].getCode(), inError.getMessages().getMessages()[0].getText())
             self.textViewShowResults.text = output
-            self.textViewShowResults.textColor = UIColor.redColor()
+            self.textViewShowResults.textColor = UIColor.red
             print(output)
         }
     }
 
-    func scrollTextViewToBottom(textView:UITextView) {
+    func scrollTextViewToBottom(_ textView:UITextView) {
         if(textView.text.characters.count > 0 )
         {
             let bottom = NSMakeRange(textView.text.characters.count-1, 1)
@@ -154,57 +192,57 @@ class ViewController: UIViewController {
         }
     }
     
-    func updateTextViewWithMessage(message:String) {
+    func updateTextViewWithMessage(_ message:String) {
         if message.characters.count > 0 {
-            self.textViewShowResults.text = self.textViewShowResults.text.stringByAppendingString(message)
-            self.textViewShowResults.text = self.textViewShowResults.text.stringByAppendingString("\n")
+            self.textViewShowResults.text = self.textViewShowResults.text + message
+            self.textViewShowResults.text = self.textViewShowResults.text + "\n"
         } else {
-            self.textViewShowResults.text = self.textViewShowResults.text.stringByAppendingString("Empty Message\n")
+            self.textViewShowResults.text = self.textViewShowResults.text + "Empty Message\n"
         }
         
         self.scrollTextViewToBottom(self.textViewShowResults)
     }
     
-    @IBAction func hideKeyBoard(sender: AnyObject) {
+    @IBAction func hideKeyBoard(_ sender: AnyObject) {
         self.view.endEditing(true)
     }
     
-    func formatCardNumber(textField:UITextField) {
+    func formatCardNumber(_ textField:UITextField) {
         var value = String()
         
         if textField == self.cardNumberTextField {
             let length = self.cardNumberBuffer.characters.count
             
-            for (i, _) in self.cardNumberBuffer.characters.enumerate() {
+            for (i, _) in self.cardNumberBuffer.characters.enumerated() {
 
                 // Reveal only the last character.
                 if (length <= kAcceptSDKDemoCreditCardObscureLength) {
                     if (i == (length - 1)) {
-                        let charIndex = self.cardNumberBuffer.startIndex.advancedBy(i)
-                        let tempStr = String(self.cardNumberBuffer.characters.suffixFrom(charIndex))
+                        let charIndex = self.cardNumberBuffer.index(self.cardNumberBuffer.startIndex, offsetBy: i)
+                        let tempStr = String(self.cardNumberBuffer.characters.suffix(from: charIndex))
                         //let singleCharacter = String(tempStr.characters.first)
 
-                        value = value.stringByAppendingString(tempStr)
+                        value = value + tempStr
                     } else {
-                        value = value.stringByAppendingString("●")
+                        value = value + "●"
                     }
                 } else {
                     if (i < kAcceptSDKDemoCreditCardObscureLength) {
-                        value = value.stringByAppendingString("●")
+                        value = value + "●"
                     } else {
-                        let charIndex = self.cardNumberBuffer.startIndex.advancedBy(i)
-                        let tempStr = String(self.cardNumberBuffer.characters.suffixFrom(charIndex))
+                        let charIndex = self.cardNumberBuffer.index(self.cardNumberBuffer.startIndex, offsetBy: i)
+                        let tempStr = String(self.cardNumberBuffer.characters.suffix(from: charIndex))
                         //let singleCharacter = String(tempStr.characters.first)
                         //let singleCharacter = String(tempStr.characters.suffix(1))
                         
-                        value = value.stringByAppendingString(tempStr)
+                        value = value + tempStr
                         break
                     }
                 }
                 
                 //After 4 characters add a space
                 if (((i + 1) % 4 == 0) && (value.characters.count < kAcceptSDKDemoCreditCardLengthPlusSpaces)) {
-                    value = value.stringByAppendingString(kAcceptSDKDemoSpace)
+                    value = value + kAcceptSDKDemoSpace
                 }
             }
         }
@@ -212,7 +250,7 @@ class ViewController: UIViewController {
         textField.text = value
     }
 
-    func isMaxLength(textField:UITextField) -> Bool {
+    func isMaxLength(_ textField:UITextField) -> Bool {
         var result = false
         
         if (textField.tag == self.cardNumberTextField.tag && textField.text?.characters.count > kAcceptSDKDemoCreditCardLengthPlusSpaces)
@@ -242,14 +280,14 @@ class ViewController: UIViewController {
     // MARK: UITextViewDelegate delegate methods
     // MARK:
     
-    func textFieldDidBeginEditing(textField:UITextField) {
+    func textFieldDidBeginEditing(_ textField:UITextField) {
     }
     
-    func textFieldShouldBeginEditing(textField:UITextField) -> Bool {
+    func textFieldShouldBeginEditing(_ textField:UITextField) -> Bool {
         return true
     }
     
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+    func textField(_ textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         
         let result = true
         
@@ -269,7 +307,7 @@ class ViewController: UIViewController {
                     if (self.cardNumberBuffer.characters.count > 1)
                     {
                         let length = self.cardNumberBuffer.characters.count-1
-                        self.cardNumberBuffer = self.cardNumberBuffer[self.cardNumberBuffer.startIndex.advancedBy(0)...self.cardNumberBuffer.startIndex.advancedBy(length-1)]
+                        self.cardNumberBuffer = self.cardNumberBuffer[self.cardNumberBuffer.index(self.cardNumberBuffer.startIndex, offsetBy: 0)...self.cardNumberBuffer.index(self.cardNumberBuffer.startIndex, offsetBy: length-1)]
                     }
                     else
                     {
@@ -326,7 +364,7 @@ class ViewController: UIViewController {
         return inputsAreOKToProceed
     }
 
-    func textFieldDidEndEditing(textField: UITextField) {
+    func textFieldDidEndEditing(_ textField: UITextField) {
         
         let validator = AcceptSDKCardFieldsValidator()
 
@@ -341,7 +379,7 @@ class ViewController: UIViewController {
                 
                 if ((luhnResult == false) || (textField.text?.characters.count < AcceptSDKCardFieldsValidatorConstants.kInAppSDKCardNumberCharacterCountMin))
                 {
-                    self.cardNumberTextField.textColor = UIColor.redColor()
+                    self.cardNumberTextField.textColor = UIColor.red
                 }
                 else
                 {
@@ -381,7 +419,7 @@ class ViewController: UIViewController {
                 }
                 else
                 {
-                    self.cardVerificationCodeTextField.textColor = UIColor.redColor()
+                    self.cardVerificationCodeTextField.textColor = UIColor.red
                 }
                 
                 if (self.validInputs())
@@ -400,7 +438,7 @@ class ViewController: UIViewController {
         }
     }
 
-    func textFieldShouldClear(textField: UITextField) -> Bool {
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
         if (textField == self.cardNumberTextField)
         {
             self.cardNumberBuffer = String() 
@@ -409,7 +447,7 @@ class ViewController: UIViewController {
         return true 
     }
     
-    func validateYear(textFieldText: String) {
+    func validateYear(_ textFieldText: String) {
         
         self.cardExpirationYear = textFieldText
         let validator = AcceptSDKCardFieldsValidator()
@@ -421,7 +459,7 @@ class ViewController: UIViewController {
         }
         else
         {
-            self.expirationYearTextField.textColor = UIColor.redColor()
+            self.expirationYearTextField.textColor = UIColor.red
         }
         
         if (self.expirationYearTextField.text?.characters.count == 0)
@@ -439,8 +477,8 @@ class ViewController: UIViewController {
         }
         else
         {
-            self.expirationMonthTextField.textColor = UIColor.redColor()
-            self.expirationYearTextField.textColor = UIColor.redColor()
+            self.expirationMonthTextField.textColor = UIColor.red
+            self.expirationYearTextField.textColor = UIColor.red
         }
         
         if (self.validInputs())
@@ -453,14 +491,14 @@ class ViewController: UIViewController {
         }
     }
     
-    func validateMonth(textField: UITextField) {
+    func validateMonth(_ textField: UITextField) {
         
         self.cardExpirationMonth = textField.text
         
         if (self.expirationMonthTextField.text?.characters.count == 1)
         {
             if ((textField.text == "0") == false) {
-                self.expirationMonthTextField.text = "0".stringByAppendingString(self.expirationMonthTextField.text!)
+                self.expirationMonthTextField.text = "0" + self.expirationMonthTextField.text!
             }
         }
         
@@ -473,7 +511,7 @@ class ViewController: UIViewController {
         }
         else
         {
-            self.expirationMonthTextField.textColor = UIColor.redColor()
+            self.expirationMonthTextField.textColor = UIColor.red
         }
         
         if (self.validInputs())
@@ -486,8 +524,8 @@ class ViewController: UIViewController {
         }
     }
 
-    func textChangeDelegate(textField: UITextField) {
-        NSNotificationCenter.defaultCenter().addObserverForName(UITextFieldTextDidChangeNotification, object: textField, queue: nil, usingBlock: { note in
+    func textChangeDelegate(_ textField: UITextField) {
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.UITextFieldTextDidChange, object: textField, queue: nil, using: { note in
                 if (self.validInputs()) {
                     self.updateTokenButton(true)
                 } else {
