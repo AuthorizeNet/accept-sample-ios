@@ -44,6 +44,7 @@ class ApplePayViewController:UIViewController, PKPaymentAuthorizationViewControl
         request.countryCode = "US"
         request.merchantIdentifier = "merchant.authorize.net.test.dev15"
         request.supportedNetworks = SupportedPaymentNetworks
+        // DO NOT INCLUDE PKMerchantCapability.capabilityEMV
         request.merchantCapabilities = PKMerchantCapability.capability3DS
         
         request.paymentSummaryItems = [
