@@ -14,12 +14,11 @@ class ApplePayViewController:UIViewController, PKPaymentAuthorizationViewControl
     @IBOutlet weak var applePayButton:UIButton!
     @IBOutlet weak var headerView:UIView!
 
-    let SupportedPaymentNetworks = [PKPaymentNetwork.visa, PKPaymentNetwork.masterCard, PKPaymentNetwork.amex]
+    @objc let SupportedPaymentNetworks = [PKPaymentNetwork.visa, PKPaymentNetwork.masterCard, PKPaymentNetwork.amex]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.headerView.backgroundColor = UIColor(colorLiteralRed: 48/255, green: 85/255, blue: 112/255, alpha: 1)
-
+        self.headerView.backgroundColor = UIColor.init(red: 48.0/255.0, green: 85.0/255.0, blue: 112.0/255.0, alpha: 1.0)
 //        self.applePayButton.hidden = !PKPaymentAuthorizationViewController.canMakePaymentsUsingNetworks(SupportedPaymentNetworks)
     }
     
@@ -52,9 +51,9 @@ class ApplePayViewController:UIViewController, PKPaymentAuthorizationViewControl
         ]
 
         let applePayController = PKPaymentAuthorizationViewController(paymentRequest: request)
-        applePayController.delegate = self
+        applePayController?.delegate = self
         
-        self.present(applePayController, animated: true, completion: nil)
+        self.present(applePayController!, animated: true, completion: nil)
     }
 
     func paymentAuthorizationViewController(_ controller: PKPaymentAuthorizationViewController, didAuthorizePayment payment: PKPayment, completion: (@escaping (PKPaymentAuthorizationStatus) -> Void)) {
@@ -73,7 +72,7 @@ class ApplePayViewController:UIViewController, PKPaymentAuthorizationViewControl
         }
     }
     
-    func performApplePayCompletion(_ controller: PKPaymentAuthorizationViewController, alert: UIAlertController) {
+    @objc func performApplePayCompletion(_ controller: PKPaymentAuthorizationViewController, alert: UIAlertController) {
         controller.dismiss(animated: true, completion: {() -> Void in
             self.present(alert, animated: false, completion: nil)
         })
@@ -84,7 +83,7 @@ class ApplePayViewController:UIViewController, PKPaymentAuthorizationViewControl
         print("paymentAuthorizationViewControllerDidFinish called")
     }
     
-    func base64forData(_ theData: Data) -> String {
+    @objc func base64forData(_ theData: Data) -> String {
         let charSet = CharacterSet.urlQueryAllowed
 
         let paymentString = NSString(data: theData, encoding: String.Encoding.utf8.rawValue)!.addingPercentEncoding(withAllowedCharacters: charSet)

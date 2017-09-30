@@ -1,6 +1,0 @@
-framework module AuthorizeNetAccept {
-  umbrella header "AuthorizeNetAccept-umbrella.h"
-
-  export *
-  module * { export * }
-}

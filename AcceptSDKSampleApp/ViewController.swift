@@ -7,7 +7,8 @@
 //
 
 import UIKit
-import AuthorizeNetAccept
+import AcceptSDK
+
 fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
   switch (lhs, rhs) {
   case let (l?, r?):
@@ -65,7 +66,7 @@ let kAcceptSDKDemoSpace:String = " "
 let kAcceptSDKDemoSlash:String = "/"
 
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var cardNumberTextField:UITextField!
     @IBOutlet weak var expirationMonthTextField:UITextField!
@@ -84,8 +85,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.headerView.backgroundColor = UIColor(colorLiteralRed: 48/255, green: 85/255, blue: 112/255, alpha: 1)
-
+        self.headerView.backgroundColor = UIColor.init(red: 48.0/255.0, green: 85.0/255.0, blue: 112.0/255.0, alpha: 1.0)
         self.setUIControlsTagValues()
         self.initializeUIControls()
         self.initializeMembers()
@@ -113,6 +113,11 @@ class ViewController: UIViewController {
         self.textChangeDelegate(self.expirationMonthTextField)
         self.textChangeDelegate(self.expirationYearTextField)
         self.textChangeDelegate(self.cardVerificationCodeTextField)
+        
+        self.cardNumberTextField.delegate = self
+        self.expirationMonthTextField.delegate = self
+        self.expirationYearTextField.delegate = self
+        self.cardVerificationCodeTextField.delegate = self
     }
     
     func initializeMembers() {
@@ -124,8 +129,7 @@ class ViewController: UIViewController {
     }
 
     func darkBlueColor() -> UIColor {
-        let color = UIColor(colorLiteralRed: 51.0/255.0, green: 102.0/255.0, blue: 153.0/255.0, alpha: 1.0)
-        
+        let color = UIColor.init(red: 51.0/255.0, green: 102.0/255.0, blue: 153.0/255.0, alpha: 1.0)
         return color 
     }
     
@@ -143,9 +147,9 @@ class ViewController: UIViewController {
     func updateTokenButton(_ isEnable: Bool) {
         self.getTokenButton.isEnabled = isEnable
         if isEnable {
-            self.getTokenButton.backgroundColor = UIColor(colorLiteralRed: 48/255, green: 85/255, blue: 112/255, alpha: 1)
+            self.getTokenButton.backgroundColor = UIColor.init(red: 48.0/255.0, green: 85.0/255.0, blue: 112.0/255.0, alpha: 1.0)
         } else {
-            self.getTokenButton.backgroundColor = UIColor(colorLiteralRed: 48/255, green: 85/255, blue: 112/255, alpha: 0.2)
+            self.getTokenButton.backgroundColor = UIColor.init(red: 48.0/255.0, green: 85.0/255.0, blue: 112.0/255.0, alpha: 0.2)
         }
     }
     
@@ -287,8 +291,7 @@ class ViewController: UIViewController {
         return true
     }
     
-    func textField(_ textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-        
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let result = true
         
         switch (textField.tag)
@@ -306,8 +309,11 @@ class ViewController: UIViewController {
                 {
                     if (self.cardNumberBuffer.characters.count > 1)
                     {
-                        let length = self.cardNumberBuffer.characters.count-1
-                        self.cardNumberBuffer = self.cardNumberBuffer[self.cardNumberBuffer.index(self.cardNumberBuffer.startIndex, offsetBy: 0)...self.cardNumberBuffer.index(self.cardNumberBuffer.startIndex, offsetBy: length-1)]
+                        let length = self.cardNumberBuffer.characters.count - 1
+                        
+            //self.cardNumberBuffer = self.cardNumberBuffer[self.cardNumberBuffer.index(self.cardNumberBuffer.startIndex, offsetBy: 0)...self.cardNumberBuffer.index(self.cardNumberBuffer.startIndex, offsetBy: length-1)]
+                        
+                        self.cardNumberBuffer = String(self.cardNumberBuffer[self.cardNumberBuffer.index(self.cardNumberBuffer.startIndex, offsetBy: 0)...self.cardNumberBuffer.index(self.cardNumberBuffer.startIndex, offsetBy: length - 1)])
                     }
                     else
                     {
@@ -349,7 +355,6 @@ class ViewController: UIViewController {
         }
         
         return result 
-
     }
     
     func validInputs() -> Bool {
@@ -364,8 +369,8 @@ class ViewController: UIViewController {
         return inputsAreOKToProceed
     }
 
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
-        
         let validator = AcceptSDKCardFieldsValidator()
 
         switch (textField.tag)
@@ -389,7 +394,6 @@ class ViewController: UIViewController {
                 if (self.validInputs())
                 {
                     self.updateTokenButton(true)
-
                 }
                 else
                 {
