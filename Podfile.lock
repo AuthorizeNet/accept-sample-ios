@@ -1,12 +1,16 @@
 PODS:
-  - AuthorizeNetAccept (0.0.9)
+  - AuthorizeNetAccept (0.4.0)
 
 DEPENDENCIES:
-  - AuthorizeNetAccept (~> 0.0.1)
+  - AuthorizeNetAccept (from `/Users/rramamur/Documents/Accept Fixes/SDK/AuthorizeNetAccept.podspec`)
+
+EXTERNAL SOURCES:
+  AuthorizeNetAccept:
+    :path: /Users/rramamur/Documents/Accept Fixes/SDK/AuthorizeNetAccept.podspec
 
 SPEC CHECKSUMS:
-  AuthorizeNetAccept: 93b71267cd77d9386cde29e81158d2e12c2a2be7
+  AuthorizeNetAccept: b945d10faa950bbb0cce3aefb9295e065ed0aa48
 
-PODFILE CHECKSUM: e52db757202b2be2eb201370ca50c15f5c1ce91c
+PODFILE CHECKSUM: bcb9ab8b9ae4eb77c7ad61284a0ed31add177ea0
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.2.1

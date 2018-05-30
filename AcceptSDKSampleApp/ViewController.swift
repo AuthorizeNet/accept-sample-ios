@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import AcceptSDK
+import AuthorizeNetAccept
 
 fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
   switch (lhs, rhs) {
