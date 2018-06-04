@@ -8,30 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		0265821E7B32A8F9E3AB051C0F15CB3E /* Pods-AcceptSDKSampleApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 761CC63DBEB966528284359B99FB59A7 /* Pods-AcceptSDKSampleApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		09324686DF32A1009CAFB1BE42855A1D /* AcceptSDKHttpConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B74C5A275C184E36304FA25F5C7379 /* AcceptSDKHttpConnection.swift */; };
-		1E12490977C1A9EF720BFCF108C1992F /* FingerPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0CABB9C83186CAC12C95F9D7D6740D /* FingerPrint.swift */; };
-		4127A8B42802E5CD102E9B7E1CB34D1C /* MerchantAuthenticaton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E36B6F19810D2F7EC2B764D367718EA /* MerchantAuthenticaton.swift */; };
-		44DCBEA04A446D2CBC098152016F881C /* AcceptSDKTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D388B97F5751F65021BF1DF8B0502E43 /* AcceptSDKTokenResponse.swift */; };
-		4F9C0EF6BE47F95CCFEDCD74C56D8842 /* AuthorizeNetAccept-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 17D8AD8956FE26429B35E9BDD36D9E11 /* AuthorizeNetAccept-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5591D3DC7C148140F8C777AA7CB309F4 /* AcceptSDKTokenInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A47DFB95F5415499CC3F3B4D4375904 /* AcceptSDKTokenInterface.swift */; };
-		69F10BEDB9210418BE9A455B01C6D31C /* AcceptSDKTokenInterfaceBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C41BCD17C44B0BA430162752316DEA6 /* AcceptSDKTokenInterfaceBuilder.swift */; };
-		71BCA84A0D64013A03AF1BFC35A0D90A /* AcceptSDKHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD84275D4B81F833EF7C5C94B009120E /* AcceptSDKHandler.swift */; };
-		74EDBE2429E41B4354FEBB93E2FCB555 /* AuthorizeNetAccept-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4899B196872343F6CB659FFE472ECDAD /* AuthorizeNetAccept-dummy.m */; };
+		242AF36C542876CF413D1D5BC3666FCA /* AcceptSDKTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F83FADDFAE60243621C3E4F08250E2 /* AcceptSDKTokenResponse.swift */; };
+		3B639FAA73FF2E64EB90CC2E821B969C /* MerchantAuthenticaton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C2D44CAFC7802D98718764212004E8 /* MerchantAuthenticaton.swift */; };
+		450BEC3D2BF245113B6D24682174D44C /* AcceptSDKHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EECDB78A21613A57C7610A6A2DD5E9 /* AcceptSDKHandler.swift */; };
+		473D3B93C8C04C1757ACAC2AB8939EC8 /* AcceptSDKCardFieldsValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BA2A39854273136320AE67F08C9415 /* AcceptSDKCardFieldsValidator.swift */; };
+		4F9C0EF6BE47F95CCFEDCD74C56D8842 /* AuthorizeNetAccept-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 00A412E9C638C598785764639FAD8225 /* AuthorizeNetAccept-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		53EC6EEA5E7D7FBC17578B66B48FC087 /* AcceptSDKTokenInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6026418A66E0B88C96CBFB349956B0 /* AcceptSDKTokenInterface.swift */; };
+		54164C7A5FAD0CDAF8681E69A6A90E47 /* AcceptSDKSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA85B1FF51971E79F983FD1DBE7E4C30 /* AcceptSDKSettings.swift */; };
+		5C8BA555879F9EE66F2FF9EE7936EE03 /* AcceptSDKHttpConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A4A77A856EF23A6C41D9377E00A7F5 /* AcceptSDKHttpConnection.swift */; };
+		68A1520B4DA14420D83AA94FA8F273E6 /* AcceptSDKBaseURLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62643F5C2224CCC730A5E9E155E532D8 /* AcceptSDKBaseURLBuilder.swift */; };
+		6AE03167C2AB3F60EE29FE86C62207E5 /* AcceptSDKTokenAPIBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579D9FAAB7C0CC33265AF0CD6FB1DE93 /* AcceptSDKTokenAPIBuilder.swift */; };
+		759A725D42B0087EC1D68E6968149C06 /* AcceptSDKPaymentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C28AEF3F0672BFB46FFEBD3252B54DE /* AcceptSDKPaymentRequest.swift */; };
 		79B78CF4EA6D122F156712DBFB0EEA42 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		82475116AB6FA0F8991D0C4762BB086E /* SecurePaymentContainerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE38435AA7A477F095D3607DF0CA3A8 /* SecurePaymentContainerRequest.swift */; };
-		B0D46651974A9B3C26471AE52A0A435A /* AcceptSDKSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF52AB9A360B6688402BCC581AF49F0 /* AcceptSDKSettings.swift */; };
-		B424E9D9B000C9D570A9827511FB9D6B /* AcceptSDKBaseInterfaceBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CCE4A2D69C50BC51465BEAD6CEB44D /* AcceptSDKBaseInterfaceBuilder.swift */; };
+		7B308F0A1A661A9ADE76F3ABA754E4C3 /* AcceptSDKInternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2085516826EBF171F0C77BCA69D5C2 /* AcceptSDKInternal.swift */; };
+		803075BF3F9C482F3E5C714D2EFCB9E4 /* AcceptSDKStringValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111FC727DAFA4032D325A49874CE2D63 /* AcceptSDKStringValidator.swift */; };
+		882C7ED1D02DE4CE3743ADDEA17794F7 /* AcceptSDKErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C37399931F99531719E34A18632D5F /* AcceptSDKErrorResponse.swift */; };
+		8D09212CB0484DC03D0ADB850D19AF48 /* AccepSDKtHttp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F7959EC9BC4A0050D113F790280A0E /* AccepSDKtHttp.swift */; };
+		97E1DCD2A90FA11126707652EA4C1678 /* AcceptSDKTokenInterfaceBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DEEFA47CE91679255AF94A1423773F /* AcceptSDKTokenInterfaceBuilder.swift */; };
+		A099939FC96BCCAB7631C8082A01BA53 /* FingerPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8388532E5B26E4010920B350AF0880FA /* FingerPrint.swift */; };
+		B4A171D23B368B0A194578E6FD9D42ED /* AuthorizeNetAccept-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A09384514618AC9DF5EF02CB4F5F3754 /* AuthorizeNetAccept-dummy.m */; };
+		B5EA89B63FA52C916562CD0884028E0A /* SecurePaymentContainerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3335EB4F8AAC9D0E9902CEAB811151B8 /* SecurePaymentContainerRequest.swift */; };
 		C165F950F71466FE3445299277D959B5 /* Pods-AcceptSDKSampleApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 662289B8AE264A488A780C682AB20502 /* Pods-AcceptSDKSampleApp-dummy.m */; };
-		C303B5ACDFABF52C06A0DD69085D0B67 /* AcceptSDKErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCFC8FBEBBD93C2565EC5A416F92521 /* AcceptSDKErrorResponse.swift */; };
-		C6025418885DB893E16810193884999E /* AcceptSDKBaseInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9BC3ED28DD9F0B4936C515855C266D /* AcceptSDKBaseInterface.swift */; };
 		C61093BD4E35E2CBE1F7F5616D92E29D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		CF3C22E3C2F6F949B18BE7DEAE0E0A74 /* AcceptSDKPaymentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF812491BF73C906D18095B2EE520D61 /* AcceptSDKPaymentRequest.swift */; };
-		E0853226AE34CEF6D1E525A852BBE92F /* AcceptSDKInternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FD17534EBD59BF5FE8B2D81F5FDC95 /* AcceptSDKInternal.swift */; };
-		E215C79175C9E3B26AE9E2C015FFE7F7 /* AcceptSDKBaseURLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9895FF47F3903C3250FC18830064564 /* AcceptSDKBaseURLBuilder.swift */; };
-		E428C5A1519BAA7E3B71B3DEC6F10450 /* AccepSDKtHttp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5044F1889A32EABCF6DF6DBB42AC262 /* AccepSDKtHttp.swift */; };
-		ECE9BC55ED282DD4BE0B36E7D9B252EB /* AcceptSDKStringValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15E3BB5BD0EC20DB748F8A8F42A2FE9 /* AcceptSDKStringValidator.swift */; };
-		F2D6827593DF98538BED36AA593A41D9 /* AcceptSDKCardFieldsValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE02BE0485E32B7D8F940F637888DDF /* AcceptSDKCardFieldsValidator.swift */; };
-		FBC2F3C36B65FBA8F4F0913D247F6E65 /* AcceptSDKTokenAPIBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DBE1AC7E470E836A597A3941ED046A /* AcceptSDKTokenAPIBuilder.swift */; };
+		CBD81B57883FE4DFCBEAD7ACE0EB2C2D /* AcceptSDKBaseInterfaceBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C338F3641D69D8CCC9199DB0B50CF349 /* AcceptSDKBaseInterfaceBuilder.swift */; };
+		D37D807F6AE36D61ECF00C7AD1F3BD6C /* AcceptSDKBaseInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ADA597E6FFE02A4897D10147873FA3 /* AcceptSDKBaseInterface.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,45 +45,45 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00A412E9C638C598785764639FAD8225 /* AuthorizeNetAccept-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AuthorizeNetAccept-umbrella.h"; sourceTree = "<group>"; };
 		059BB9C1F517FD05ECC8951F30996515 /* Pods-AcceptSDKSampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AcceptSDKSampleApp.debug.xcconfig"; sourceTree = "<group>"; };
-		0A47DFB95F5415499CC3F3B4D4375904 /* AcceptSDKTokenInterface.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AcceptSDKTokenInterface.swift; sourceTree = "<group>"; };
-		0C41BCD17C44B0BA430162752316DEA6 /* AcceptSDKTokenInterfaceBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AcceptSDKTokenInterfaceBuilder.swift; sourceTree = "<group>"; };
-		0E36B6F19810D2F7EC2B764D367718EA /* MerchantAuthenticaton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MerchantAuthenticaton.swift; sourceTree = "<group>"; };
-		17D8AD8956FE26429B35E9BDD36D9E11 /* AuthorizeNetAccept-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AuthorizeNetAccept-umbrella.h"; sourceTree = "<group>"; };
+		08EECDB78A21613A57C7610A6A2DD5E9 /* AcceptSDKHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AcceptSDKHandler.swift; path = AcceptSDK/AcceptSDKHandler.swift; sourceTree = "<group>"; };
+		0C28AEF3F0672BFB46FFEBD3252B54DE /* AcceptSDKPaymentRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AcceptSDKPaymentRequest.swift; path = AcceptSDK/Request/AcceptSDKPaymentRequest.swift; sourceTree = "<group>"; };
+		111FC727DAFA4032D325A49874CE2D63 /* AcceptSDKStringValidator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AcceptSDKStringValidator.swift; path = AcceptSDK/Validators/AcceptSDKStringValidator.swift; sourceTree = "<group>"; };
+		15DEEFA47CE91679255AF94A1423773F /* AcceptSDKTokenInterfaceBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AcceptSDKTokenInterfaceBuilder.swift; path = AcceptSDK/AcceptBuilder/AcceptSDKTokenInterfaceBuilder.swift; sourceTree = "<group>"; };
 		1E3312C979F688E94EF83EE1E5604824 /* Pods-AcceptSDKSampleApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AcceptSDKSampleApp-acknowledgements.markdown"; sourceTree = "<group>"; };
 		1FBDCEFAAE0C4B71420B66D2372E5B73 /* Pods-AcceptSDKSampleApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AcceptSDKSampleApp-acknowledgements.plist"; sourceTree = "<group>"; };
-		21CCE4A2D69C50BC51465BEAD6CEB44D /* AcceptSDKBaseInterfaceBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AcceptSDKBaseInterfaceBuilder.swift; sourceTree = "<group>"; };
-		29FD17534EBD59BF5FE8B2D81F5FDC95 /* AcceptSDKInternal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AcceptSDKInternal.swift; sourceTree = "<group>"; };
-		31557CC3840D931BA3768E4B633DD8FC /* AuthorizeNetAccept.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = AuthorizeNetAccept.modulemap; sourceTree = "<group>"; };
-		393151A80C255A4C79D86AC1D6B5AB23 /* AuthorizeNetAccept-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AuthorizeNetAccept-prefix.pch"; sourceTree = "<group>"; };
-		3C9BC3ED28DD9F0B4936C515855C266D /* AcceptSDKBaseInterface.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AcceptSDKBaseInterface.swift; sourceTree = "<group>"; };
-		4899B196872343F6CB659FFE472ECDAD /* AuthorizeNetAccept-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AuthorizeNetAccept-dummy.m"; sourceTree = "<group>"; };
-		4C1D4F5C06073B3F0B702FBB781C3DF2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B2085516826EBF171F0C77BCA69D5C2 /* AcceptSDKInternal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AcceptSDKInternal.swift; path = AcceptSDK/AcceptSDKInternal.swift; sourceTree = "<group>"; };
+		3335EB4F8AAC9D0E9902CEAB811151B8 /* SecurePaymentContainerRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SecurePaymentContainerRequest.swift; path = AcceptSDK/Request/SecurePaymentContainerRequest.swift; sourceTree = "<group>"; };
+		36A4A77A856EF23A6C41D9377E00A7F5 /* AcceptSDKHttpConnection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AcceptSDKHttpConnection.swift; path = AcceptSDK/Network/AcceptSDKHttpConnection.swift; sourceTree = "<group>"; };
+		47ADA597E6FFE02A4897D10147873FA3 /* AcceptSDKBaseInterface.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AcceptSDKBaseInterface.swift; path = AcceptSDK/Interface/AcceptSDKBaseInterface.swift; sourceTree = "<group>"; };
+		579D9FAAB7C0CC33265AF0CD6FB1DE93 /* AcceptSDKTokenAPIBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AcceptSDKTokenAPIBuilder.swift; path = AcceptSDK/AcceptBuilder/AcceptSDKTokenAPIBuilder.swift; sourceTree = "<group>"; };
 		59B7A4090D85A37C9C2E3CAD3A4E53D1 /* Pods-AcceptSDKSampleApp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-AcceptSDKSampleApp.modulemap"; sourceTree = "<group>"; };
-		5B0CABB9C83186CAC12C95F9D7D6740D /* FingerPrint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FingerPrint.swift; sourceTree = "<group>"; };
+		62643F5C2224CCC730A5E9E155E532D8 /* AcceptSDKBaseURLBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AcceptSDKBaseURLBuilder.swift; path = AcceptSDK/AcceptBuilder/AcceptSDKBaseURLBuilder.swift; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		662289B8AE264A488A780C682AB20502 /* Pods-AcceptSDKSampleApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AcceptSDKSampleApp-dummy.m"; sourceTree = "<group>"; };
 		6B3A230DA12699EDF1A27136BD7E1F4B /* Pods_AcceptSDKSampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AcceptSDKSampleApp.framework; path = "Pods-AcceptSDKSampleApp.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		73DFE2F1120B93356AF97805FED4EE41 /* AuthorizeNetAccept.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AuthorizeNetAccept.xcconfig; sourceTree = "<group>"; };
 		761CC63DBEB966528284359B99FB59A7 /* Pods-AcceptSDKSampleApp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AcceptSDKSampleApp-umbrella.h"; sourceTree = "<group>"; };
 		7DE5D5C75962F06DF0C78E517C4DBCC6 /* Pods-AcceptSDKSampleApp-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AcceptSDKSampleApp-resources.sh"; sourceTree = "<group>"; };
-		8BCFC8FBEBBD93C2565EC5A416F92521 /* AcceptSDKErrorResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AcceptSDKErrorResponse.swift; sourceTree = "<group>"; };
+		8047E955F483FE18FB2D4203187C6F78 /* AuthorizeNetAccept.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = AuthorizeNetAccept.modulemap; sourceTree = "<group>"; };
+		8388532E5B26E4010920B350AF0880FA /* FingerPrint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FingerPrint.swift; path = AcceptSDK/Request/FingerPrint.swift; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		95DBE1AC7E470E836A597A3941ED046A /* AcceptSDKTokenAPIBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AcceptSDKTokenAPIBuilder.swift; sourceTree = "<group>"; };
 		98BB31F77BEFCE6126AB44212B39063A /* AuthorizeNetAccept.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AuthorizeNetAccept.framework; path = AuthorizeNetAccept.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9CF52AB9A360B6688402BCC581AF49F0 /* AcceptSDKSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AcceptSDKSettings.swift; sourceTree = "<group>"; };
-		9FE02BE0485E32B7D8F940F637888DDF /* AcceptSDKCardFieldsValidator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AcceptSDKCardFieldsValidator.swift; sourceTree = "<group>"; };
+		A09384514618AC9DF5EF02CB4F5F3754 /* AuthorizeNetAccept-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AuthorizeNetAccept-dummy.m"; sourceTree = "<group>"; };
+		A1F7959EC9BC4A0050D113F790280A0E /* AccepSDKtHttp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AccepSDKtHttp.swift; path = AcceptSDK/Network/AccepSDKtHttp.swift; sourceTree = "<group>"; };
 		A3DF80F58225567C17D52DDE353AF7A8 /* Pods-AcceptSDKSampleApp-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AcceptSDKSampleApp-frameworks.sh"; sourceTree = "<group>"; };
-		B7B74C5A275C184E36304FA25F5C7379 /* AcceptSDKHttpConnection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AcceptSDKHttpConnection.swift; sourceTree = "<group>"; };
-		BD84275D4B81F833EF7C5C94B009120E /* AcceptSDKHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AcceptSDKHandler.swift; sourceTree = "<group>"; };
+		AA85B1FF51971E79F983FD1DBE7E4C30 /* AcceptSDKSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AcceptSDKSettings.swift; path = AcceptSDK/AcceptSDKSettings.swift; sourceTree = "<group>"; };
+		B9C2D44CAFC7802D98718764212004E8 /* MerchantAuthenticaton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MerchantAuthenticaton.swift; path = AcceptSDK/Request/MerchantAuthenticaton.swift; sourceTree = "<group>"; };
+		C338F3641D69D8CCC9199DB0B50CF349 /* AcceptSDKBaseInterfaceBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AcceptSDKBaseInterfaceBuilder.swift; path = AcceptSDK/AcceptBuilder/AcceptSDKBaseInterfaceBuilder.swift; sourceTree = "<group>"; };
 		C4D9BC9748E0174C6FF80EC71F7D8593 /* Pods-AcceptSDKSampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AcceptSDKSampleApp.release.xcconfig"; sourceTree = "<group>"; };
-		CEE38435AA7A477F095D3607DF0CA3A8 /* SecurePaymentContainerRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SecurePaymentContainerRequest.swift; sourceTree = "<group>"; };
-		CF812491BF73C906D18095B2EE520D61 /* AcceptSDKPaymentRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AcceptSDKPaymentRequest.swift; sourceTree = "<group>"; };
-		D15E3BB5BD0EC20DB748F8A8F42A2FE9 /* AcceptSDKStringValidator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AcceptSDKStringValidator.swift; sourceTree = "<group>"; };
-		D388B97F5751F65021BF1DF8B0502E43 /* AcceptSDKTokenResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AcceptSDKTokenResponse.swift; sourceTree = "<group>"; };
-		E5044F1889A32EABCF6DF6DBB42AC262 /* AccepSDKtHttp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AccepSDKtHttp.swift; sourceTree = "<group>"; };
-		E9895FF47F3903C3250FC18830064564 /* AcceptSDKBaseURLBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AcceptSDKBaseURLBuilder.swift; sourceTree = "<group>"; };
-		EAAE76ACC61A50D89899DA32DD352943 /* AuthorizeNetAccept.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AuthorizeNetAccept.xcconfig; sourceTree = "<group>"; };
+		C5C37399931F99531719E34A18632D5F /* AcceptSDKErrorResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AcceptSDKErrorResponse.swift; path = AcceptSDK/Response/AcceptSDKErrorResponse.swift; sourceTree = "<group>"; };
+		D5F8334587C901ADDBEA8190763B652A /* AuthorizeNetAccept-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AuthorizeNetAccept-prefix.pch"; sourceTree = "<group>"; };
+		D8F83FADDFAE60243621C3E4F08250E2 /* AcceptSDKTokenResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AcceptSDKTokenResponse.swift; path = AcceptSDK/Response/AcceptSDKTokenResponse.swift; sourceTree = "<group>"; };
+		EF6026418A66E0B88C96CBFB349956B0 /* AcceptSDKTokenInterface.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AcceptSDKTokenInterface.swift; path = AcceptSDK/Interface/AcceptSDKTokenInterface.swift; sourceTree = "<group>"; };
+		F1BA2A39854273136320AE67F08C9415 /* AcceptSDKCardFieldsValidator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AcceptSDKCardFieldsValidator.swift; path = AcceptSDK/Validators/AcceptSDKCardFieldsValidator.swift; sourceTree = "<group>"; };
 		F63B22DF5F0A1F382892DF1D891D71F2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6AC3F73D3B8ED8CCCBF382973E9C24C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,24 +106,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		38CDA1CAE9580870A68DE063B23B578C /* Interface */ = {
+		0C9ADFED160CABCCBEE4D5707C49278A /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				3C9BC3ED28DD9F0B4936C515855C266D /* AcceptSDKBaseInterface.swift */,
-				0A47DFB95F5415499CC3F3B4D4375904 /* AcceptSDKTokenInterface.swift */,
+				8047E955F483FE18FB2D4203187C6F78 /* AuthorizeNetAccept.modulemap */,
+				73DFE2F1120B93356AF97805FED4EE41 /* AuthorizeNetAccept.xcconfig */,
+				A09384514618AC9DF5EF02CB4F5F3754 /* AuthorizeNetAccept-dummy.m */,
+				D5F8334587C901ADDBEA8190763B652A /* AuthorizeNetAccept-prefix.pch */,
+				00A412E9C638C598785764639FAD8225 /* AuthorizeNetAccept-umbrella.h */,
+				F6AC3F73D3B8ED8CCCBF382973E9C24C /* Info.plist */,
 			);
-			name = Interface;
-			path = Interface;
+			name = "Support Files";
+			path = "../Target Support Files/AuthorizeNetAccept";
 			sourceTree = "<group>";
 		};
-		45A664BA6CDDC1937DFFAD5C162333FB /* Network */ = {
+		42FDB2A81F63B78ECD393EE739FDFAA9 /* AuthorizeNetAccept */ = {
 			isa = PBXGroup;
 			children = (
-				E5044F1889A32EABCF6DF6DBB42AC262 /* AccepSDKtHttp.swift */,
-				B7B74C5A275C184E36304FA25F5C7379 /* AcceptSDKHttpConnection.swift */,
+				A1F7959EC9BC4A0050D113F790280A0E /* AccepSDKtHttp.swift */,
+				47ADA597E6FFE02A4897D10147873FA3 /* AcceptSDKBaseInterface.swift */,
+				C338F3641D69D8CCC9199DB0B50CF349 /* AcceptSDKBaseInterfaceBuilder.swift */,
+				62643F5C2224CCC730A5E9E155E532D8 /* AcceptSDKBaseURLBuilder.swift */,
+				F1BA2A39854273136320AE67F08C9415 /* AcceptSDKCardFieldsValidator.swift */,
+				C5C37399931F99531719E34A18632D5F /* AcceptSDKErrorResponse.swift */,
+				08EECDB78A21613A57C7610A6A2DD5E9 /* AcceptSDKHandler.swift */,
+				36A4A77A856EF23A6C41D9377E00A7F5 /* AcceptSDKHttpConnection.swift */,
+				2B2085516826EBF171F0C77BCA69D5C2 /* AcceptSDKInternal.swift */,
+				0C28AEF3F0672BFB46FFEBD3252B54DE /* AcceptSDKPaymentRequest.swift */,
+				AA85B1FF51971E79F983FD1DBE7E4C30 /* AcceptSDKSettings.swift */,
+				111FC727DAFA4032D325A49874CE2D63 /* AcceptSDKStringValidator.swift */,
+				579D9FAAB7C0CC33265AF0CD6FB1DE93 /* AcceptSDKTokenAPIBuilder.swift */,
+				EF6026418A66E0B88C96CBFB349956B0 /* AcceptSDKTokenInterface.swift */,
+				15DEEFA47CE91679255AF94A1423773F /* AcceptSDKTokenInterfaceBuilder.swift */,
+				D8F83FADDFAE60243621C3E4F08250E2 /* AcceptSDKTokenResponse.swift */,
+				8388532E5B26E4010920B350AF0880FA /* FingerPrint.swift */,
+				B9C2D44CAFC7802D98718764212004E8 /* MerchantAuthenticaton.swift */,
+				3335EB4F8AAC9D0E9902CEAB811151B8 /* SecurePaymentContainerRequest.swift */,
+				0C9ADFED160CABCCBEE4D5707C49278A /* Support Files */,
 			);
-			name = Network;
-			path = Network;
+			name = AuthorizeNetAccept;
+			path = AuthorizeNetAccept;
 			sourceTree = "<group>";
 		};
 		4B88251EF37A5698651A31372B3C9406 /* Targets Support Files */ = {
@@ -161,71 +183,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		53C7735F5FA39ADD7F14C1F994BA29EB /* Validators */ = {
-			isa = PBXGroup;
-			children = (
-				9FE02BE0485E32B7D8F940F637888DDF /* AcceptSDKCardFieldsValidator.swift */,
-				D15E3BB5BD0EC20DB748F8A8F42A2FE9 /* AcceptSDKStringValidator.swift */,
-			);
-			name = Validators;
-			path = Validators;
-			sourceTree = "<group>";
-		};
-		5C4F2EA2B2BB285878B5393E4A135DCA /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				E0FC012753F16F22554AE3988295BADD /* AuthorizeNetAccept */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		63EFFDBBF62FB4E60D2678E0B7A554C7 /* AcceptBuilder */ = {
-			isa = PBXGroup;
-			children = (
-				21CCE4A2D69C50BC51465BEAD6CEB44D /* AcceptSDKBaseInterfaceBuilder.swift */,
-				E9895FF47F3903C3250FC18830064564 /* AcceptSDKBaseURLBuilder.swift */,
-				95DBE1AC7E470E836A597A3941ED046A /* AcceptSDKTokenAPIBuilder.swift */,
-				0C41BCD17C44B0BA430162752316DEA6 /* AcceptSDKTokenInterfaceBuilder.swift */,
-			);
-			name = AcceptBuilder;
-			path = AcceptBuilder;
-			sourceTree = "<group>";
-		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				5C4F2EA2B2BB285878B5393E4A135DCA /* Development Pods */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				EB5AE2C0311CF4425F4F7BE6532BC6B9 /* Pods */,
 				52570C56E4B311105C6B1B3142AA7268 /* Products */,
 				4B88251EF37A5698651A31372B3C9406 /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		8CC332F8318DFADA51A250DD840AF31F /* Request */ = {
-			isa = PBXGroup;
-			children = (
-				CF812491BF73C906D18095B2EE520D61 /* AcceptSDKPaymentRequest.swift */,
-				5B0CABB9C83186CAC12C95F9D7D6740D /* FingerPrint.swift */,
-				0E36B6F19810D2F7EC2B764D367718EA /* MerchantAuthenticaton.swift */,
-				CEE38435AA7A477F095D3607DF0CA3A8 /* SecurePaymentContainerRequest.swift */,
-			);
-			name = Request;
-			path = Request;
-			sourceTree = "<group>";
-		};
-		98A7BFEC7AFA918D04DD94F36BC97CBE /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				31557CC3840D931BA3768E4B633DD8FC /* AuthorizeNetAccept.modulemap */,
-				EAAE76ACC61A50D89899DA32DD352943 /* AuthorizeNetAccept.xcconfig */,
-				4899B196872343F6CB659FFE472ECDAD /* AuthorizeNetAccept-dummy.m */,
-				393151A80C255A4C79D86AC1D6B5AB23 /* AuthorizeNetAccept-prefix.pch */,
-				17D8AD8956FE26429B35E9BDD36D9E11 /* AuthorizeNetAccept-umbrella.h */,
-				4C1D4F5C06073B3F0B702FBB781C3DF2 /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "../Sample App/Pods/Target Support Files/AuthorizeNetAccept";
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -244,41 +210,12 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		DAC4939A1B9E51DB3888F86B44110E45 /* Response */ = {
+		EB5AE2C0311CF4425F4F7BE6532BC6B9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				8BCFC8FBEBBD93C2565EC5A416F92521 /* AcceptSDKErrorResponse.swift */,
-				D388B97F5751F65021BF1DF8B0502E43 /* AcceptSDKTokenResponse.swift */,
+				42FDB2A81F63B78ECD393EE739FDFAA9 /* AuthorizeNetAccept */,
 			);
-			name = Response;
-			path = Response;
-			sourceTree = "<group>";
-		};
-		E0FC012753F16F22554AE3988295BADD /* AuthorizeNetAccept */ = {
-			isa = PBXGroup;
-			children = (
-				F325BCB0E6053C1D38A2B5B60259ED7F /* AcceptSDK */,
-				98A7BFEC7AFA918D04DD94F36BC97CBE /* Support Files */,
-			);
-			name = AuthorizeNetAccept;
-			path = "/Users/rramamur/Documents/Accept Fixes/SDK";
-			sourceTree = "<absolute>";
-		};
-		F325BCB0E6053C1D38A2B5B60259ED7F /* AcceptSDK */ = {
-			isa = PBXGroup;
-			children = (
-				BD84275D4B81F833EF7C5C94B009120E /* AcceptSDKHandler.swift */,
-				29FD17534EBD59BF5FE8B2D81F5FDC95 /* AcceptSDKInternal.swift */,
-				9CF52AB9A360B6688402BCC581AF49F0 /* AcceptSDKSettings.swift */,
-				63EFFDBBF62FB4E60D2678E0B7A554C7 /* AcceptBuilder */,
-				38CDA1CAE9580870A68DE063B23B578C /* Interface */,
-				45A664BA6CDDC1937DFFAD5C162333FB /* Network */,
-				8CC332F8318DFADA51A250DD840AF31F /* Request */,
-				DAC4939A1B9E51DB3888F86B44110E45 /* Response */,
-				53C7735F5FA39ADD7F14C1F994BA29EB /* Validators */,
-			);
-			name = AcceptSDK;
-			path = AcceptSDK;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,7 +244,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 64C75B0CAE4C245D1B327037E928360B /* Build configuration list for PBXNativeTarget "AuthorizeNetAccept" */;
 			buildPhases = (
-				7BC93CB82F2C44F0F935526A790CF850 /* Sources */,
+				68F386C185868D8EC6244F0A09FEFC6F /* Sources */,
 				459D7A1AA120A5C2BF231158433184BC /* Frameworks */,
 				B3FD83461F2E7C259B5BEFAFABF08C66 /* Headers */,
 			);
@@ -366,30 +303,30 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		7BC93CB82F2C44F0F935526A790CF850 /* Sources */ = {
+		68F386C185868D8EC6244F0A09FEFC6F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E428C5A1519BAA7E3B71B3DEC6F10450 /* AccepSDKtHttp.swift in Sources */,
-				C6025418885DB893E16810193884999E /* AcceptSDKBaseInterface.swift in Sources */,
-				B424E9D9B000C9D570A9827511FB9D6B /* AcceptSDKBaseInterfaceBuilder.swift in Sources */,
-				E215C79175C9E3B26AE9E2C015FFE7F7 /* AcceptSDKBaseURLBuilder.swift in Sources */,
-				F2D6827593DF98538BED36AA593A41D9 /* AcceptSDKCardFieldsValidator.swift in Sources */,
-				C303B5ACDFABF52C06A0DD69085D0B67 /* AcceptSDKErrorResponse.swift in Sources */,
-				71BCA84A0D64013A03AF1BFC35A0D90A /* AcceptSDKHandler.swift in Sources */,
-				09324686DF32A1009CAFB1BE42855A1D /* AcceptSDKHttpConnection.swift in Sources */,
-				E0853226AE34CEF6D1E525A852BBE92F /* AcceptSDKInternal.swift in Sources */,
-				CF3C22E3C2F6F949B18BE7DEAE0E0A74 /* AcceptSDKPaymentRequest.swift in Sources */,
-				B0D46651974A9B3C26471AE52A0A435A /* AcceptSDKSettings.swift in Sources */,
-				ECE9BC55ED282DD4BE0B36E7D9B252EB /* AcceptSDKStringValidator.swift in Sources */,
-				FBC2F3C36B65FBA8F4F0913D247F6E65 /* AcceptSDKTokenAPIBuilder.swift in Sources */,
-				5591D3DC7C148140F8C777AA7CB309F4 /* AcceptSDKTokenInterface.swift in Sources */,
-				69F10BEDB9210418BE9A455B01C6D31C /* AcceptSDKTokenInterfaceBuilder.swift in Sources */,
-				44DCBEA04A446D2CBC098152016F881C /* AcceptSDKTokenResponse.swift in Sources */,
-				74EDBE2429E41B4354FEBB93E2FCB555 /* AuthorizeNetAccept-dummy.m in Sources */,
-				1E12490977C1A9EF720BFCF108C1992F /* FingerPrint.swift in Sources */,
-				4127A8B42802E5CD102E9B7E1CB34D1C /* MerchantAuthenticaton.swift in Sources */,
-				82475116AB6FA0F8991D0C4762BB086E /* SecurePaymentContainerRequest.swift in Sources */,
+				8D09212CB0484DC03D0ADB850D19AF48 /* AccepSDKtHttp.swift in Sources */,
+				D37D807F6AE36D61ECF00C7AD1F3BD6C /* AcceptSDKBaseInterface.swift in Sources */,
+				CBD81B57883FE4DFCBEAD7ACE0EB2C2D /* AcceptSDKBaseInterfaceBuilder.swift in Sources */,
+				68A1520B4DA14420D83AA94FA8F273E6 /* AcceptSDKBaseURLBuilder.swift in Sources */,
+				473D3B93C8C04C1757ACAC2AB8939EC8 /* AcceptSDKCardFieldsValidator.swift in Sources */,
+				882C7ED1D02DE4CE3743ADDEA17794F7 /* AcceptSDKErrorResponse.swift in Sources */,
+				450BEC3D2BF245113B6D24682174D44C /* AcceptSDKHandler.swift in Sources */,
+				5C8BA555879F9EE66F2FF9EE7936EE03 /* AcceptSDKHttpConnection.swift in Sources */,
+				7B308F0A1A661A9ADE76F3ABA754E4C3 /* AcceptSDKInternal.swift in Sources */,
+				759A725D42B0087EC1D68E6968149C06 /* AcceptSDKPaymentRequest.swift in Sources */,
+				54164C7A5FAD0CDAF8681E69A6A90E47 /* AcceptSDKSettings.swift in Sources */,
+				803075BF3F9C482F3E5C714D2EFCB9E4 /* AcceptSDKStringValidator.swift in Sources */,
+				6AE03167C2AB3F60EE29FE86C62207E5 /* AcceptSDKTokenAPIBuilder.swift in Sources */,
+				53EC6EEA5E7D7FBC17578B66B48FC087 /* AcceptSDKTokenInterface.swift in Sources */,
+				97E1DCD2A90FA11126707652EA4C1678 /* AcceptSDKTokenInterfaceBuilder.swift in Sources */,
+				242AF36C542876CF413D1D5BC3666FCA /* AcceptSDKTokenResponse.swift in Sources */,
+				B4A171D23B368B0A194578E6FD9D42ED /* AuthorizeNetAccept-dummy.m in Sources */,
+				A099939FC96BCCAB7631C8082A01BA53 /* FingerPrint.swift in Sources */,
+				3B639FAA73FF2E64EB90CC2E821B969C /* MerchantAuthenticaton.swift in Sources */,
+				B5EA89B63FA52C916562CD0884028E0A /* SecurePaymentContainerRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,7 +391,7 @@
 		};
 		2EF40E6DD2814A2E802AEFF8A3EB7B40 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EAAE76ACC61A50D89899DA32DD352943 /* AuthorizeNetAccept.xcconfig */;
+			baseConfigurationReference = 73DFE2F1120B93356AF97805FED4EE41 /* AuthorizeNetAccept.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -536,7 +473,7 @@
 		};
 		8B29243238DFC8E248E7E735E4877607 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EAAE76ACC61A50D89899DA32DD352943 /* AuthorizeNetAccept.xcconfig */;
+			baseConfigurationReference = 73DFE2F1120B93356AF97805FED4EE41 /* AuthorizeNetAccept.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
