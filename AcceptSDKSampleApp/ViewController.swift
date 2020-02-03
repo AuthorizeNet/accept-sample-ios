@@ -189,15 +189,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
 
     func scrollTextViewToBottom(_ textView:UITextView) {
-        if(textView.text.characters.count > 0 )
+        if(textView.text.count > 0 )
         {
-            let bottom = NSMakeRange(textView.text.characters.count-1, 1)
+            let bottom = NSMakeRange(textView.text.count-1, 1)
             textView.scrollRangeToVisible(bottom)
         }
     }
     
     func updateTextViewWithMessage(_ message:String) {
-        if message.characters.count > 0 {
+        if message.count > 0 {
             self.textViewShowResults.text = self.textViewShowResults.text + message
             self.textViewShowResults.text = self.textViewShowResults.text + "\n"
         } else {
@@ -215,15 +215,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
         var value = String()
         
         if textField == self.cardNumberTextField {
-            let length = self.cardNumberBuffer.characters.count
+            let length = self.cardNumberBuffer.count
             
-            for (i, _) in self.cardNumberBuffer.characters.enumerated() {
+            for (i, _) in self.cardNumberBuffer.enumerated() {
 
                 // Reveal only the last character.
                 if (length <= kAcceptSDKDemoCreditCardObscureLength) {
                     if (i == (length - 1)) {
                         let charIndex = self.cardNumberBuffer.index(self.cardNumberBuffer.startIndex, offsetBy: i)
-                        let tempStr = String(self.cardNumberBuffer.characters.suffix(from: charIndex))
+                        let tempStr = String(self.cardNumberBuffer.suffix(from: charIndex))
                         //let singleCharacter = String(tempStr.characters.first)
 
                         value = value + tempStr
@@ -235,7 +235,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         value = value + "●"
                     } else {
                         let charIndex = self.cardNumberBuffer.index(self.cardNumberBuffer.startIndex, offsetBy: i)
-                        let tempStr = String(self.cardNumberBuffer.characters.suffix(from: charIndex))
+                        let tempStr = String(self.cardNumberBuffer.suffix(from: charIndex))
                         //let singleCharacter = String(tempStr.characters.first)
                         //let singleCharacter = String(tempStr.characters.suffix(1))
                         
@@ -245,7 +245,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 }
                 
                 //After 4 characters add a space
-                if (((i + 1) % 4 == 0) && (value.characters.count < kAcceptSDKDemoCreditCardLengthPlusSpaces)) {
+                if (((i + 1) % 4 == 0) && (value.count < kAcceptSDKDemoCreditCardLengthPlusSpaces)) {
                     value = value + kAcceptSDKDemoSpace
                 }
             }
@@ -257,21 +257,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func isMaxLength(_ textField:UITextField) -> Bool {
         var result = false
         
-        if (textField.tag == self.cardNumberTextField.tag && textField.text?.characters.count > kAcceptSDKDemoCreditCardLengthPlusSpaces)
+        if (textField.tag == self.cardNumberTextField.tag && textField.text?.count > kAcceptSDKDemoCreditCardLengthPlusSpaces)
         {
             result = true
         }
         
-        if (textField == self.expirationMonthTextField && textField.text?.characters.count > kAcceptSDKDemoExpirationMonthLength)
+        if (textField == self.expirationMonthTextField && textField.text?.count > kAcceptSDKDemoExpirationMonthLength)
         {
             result = true
         }
         
-        if (textField == self.expirationYearTextField && textField.text?.characters.count > kAcceptSDKDemoExpirationYearLength)
+        if (textField == self.expirationYearTextField && textField.text?.count > kAcceptSDKDemoExpirationYearLength)
         {
             result = true
         }
-        if (textField == self.cardVerificationCodeTextField && textField.text?.characters.count > kAcceptSDKDemoCVV2Length)
+        if (textField == self.cardVerificationCodeTextField && textField.text?.count > kAcceptSDKDemoCVV2Length)
         {
             result = true
         }
@@ -297,7 +297,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         switch (textField.tag)
         {
         case 1:
-                if (string.characters.count > 0)
+                if (string.count > 0)
                 {
                     if (self.isMaxLength(textField)) {
                         return false
@@ -307,9 +307,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 }
                 else
                 {
-                    if (self.cardNumberBuffer.characters.count > 1)
+                    if (self.cardNumberBuffer.count > 1)
                     {
-                        let length = self.cardNumberBuffer.characters.count - 1
+                        let length = self.cardNumberBuffer.count - 1
                         
             //self.cardNumberBuffer = self.cardNumberBuffer[self.cardNumberBuffer.index(self.cardNumberBuffer.startIndex, offsetBy: 0)...self.cardNumberBuffer.index(self.cardNumberBuffer.startIndex, offsetBy: length-1)]
                         
@@ -324,7 +324,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 return false
         case 2:
 
-            if (string.characters.count > 0) {
+            if (string.count > 0) {
                 if (self.isMaxLength(textField)) {
                     return false
                 }
@@ -333,7 +333,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             break
         case 3:
 
-            if (string.characters.count > 0) {
+            if (string.count > 0) {
                 if (self.isMaxLength(textField)) {
                     return false
                 }
@@ -342,7 +342,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             break
         case 4:
 
-            if (string.characters.count > 0) {
+            if (string.count > 0) {
                 if (self.isMaxLength(textField)) {
                     return false
                 }
@@ -382,7 +382,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 
                 let luhnResult = validator.validateCardWithLuhnAlgorithm(self.cardNumberBuffer)
                 
-                if ((luhnResult == false) || (textField.text?.characters.count < AcceptSDKCardFieldsValidatorConstants.kInAppSDKCardNumberCharacterCountMin))
+                if ((luhnResult == false) || (textField.text?.count < AcceptSDKCardFieldsValidatorConstants.kInAppSDKCardNumberCharacterCountMin))
                 {
                     self.cardNumberTextField.textColor = UIColor.red
                 }
@@ -466,11 +466,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
             self.expirationYearTextField.textColor = UIColor.red
         }
         
-        if (self.expirationYearTextField.text?.characters.count == 0)
+        if (self.expirationYearTextField.text?.count == 0)
         {
             return
         }
-        if (self.expirationMonthTextField.text?.characters.count == 0)
+        if (self.expirationMonthTextField.text?.count == 0)
         {
             return
         }
@@ -499,7 +499,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         self.cardExpirationMonth = textField.text
         
-        if (self.expirationMonthTextField.text?.characters.count == 1)
+        if (self.expirationMonthTextField.text?.count == 1)
         {
             if ((textField.text == "0") == false) {
                 self.expirationMonthTextField.text = "0" + self.expirationMonthTextField.text!
@@ -529,7 +529,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
 
     func textChangeDelegate(_ textField: UITextField) {
-        NotificationCenter.default.addObserver(forName: NSNotification.Name.UITextFieldTextDidChange, object: textField, queue: nil, using: { note in
+        NotificationCenter.default.addObserver(forName: UITextField.textDidChangeNotification, object: textField, queue: nil, using: { note in
                 if (self.validInputs()) {
                     self.updateTokenButton(true)
                 } else {

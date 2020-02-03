@@ -1,12 +1,16 @@
 PODS:
-  - AuthorizeNetAccept (0.3.0)
+  - AuthorizeNetAccept (0.4.0)
 
 DEPENDENCIES:
   - AuthorizeNetAccept
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AuthorizeNetAccept
+
 SPEC CHECKSUMS:
-  AuthorizeNetAccept: 77963526f1e15d2be30b771f1049ca09c6d11524
+  AuthorizeNetAccept: b945d10faa950bbb0cce3aefb9295e065ed0aa48
 
 PODFILE CHECKSUM: dcb412dd371fb5b1b5f9e4dd990639acda242ab2
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.7.3
